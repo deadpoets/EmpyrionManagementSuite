@@ -1,0 +1,29 @@
+﻿<Window x:Class="EmpyrionManagementSuite.AppMaster"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmpyrionManagementSuite"
+        DataContext="{Binding Source={StaticResource Locator}, Path=AppMasterViewModel}"
+        mc:Ignorable="d"
+        Title="{Binding TitleBar}"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="600"
+        Width="800">
+    <Grid Background="{StaticResource AppThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource AppThemeBackgroundInverse}" MouseDown="Window_MouseDown">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                <TextBlock Style="{StaticResource AppHeader}" Text="{Binding TitleBar}" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+        </Grid>
+    </Grid>
+</Window>

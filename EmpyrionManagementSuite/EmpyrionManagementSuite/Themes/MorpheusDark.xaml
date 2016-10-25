@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:EmpyrionManagementSuite.Themes">
+    <SolidColorBrush x:Key="AppThemeBackground" Color="#2D2E2F" />
+    <SolidColorBrush x:Key="AppThemeBackgroundInverse" Color="#FAFAFB" />
+    <SolidColorBrush x:Key="AppThemeForeground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="AppThemeForegroundInverse" Color="#000000" />
+
+    <!--// AppHeader TextBlock //-->
+    <Style x:Key="AppHeader" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AppThemeForegroundInverse}" />
+        <Setter Property="FontSize" Value="21" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+</ResourceDictionary>
