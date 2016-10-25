@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmpyrionManagementSuite"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         DataContext="{Binding Source={StaticResource Locator}, Path=AppMaster}"
         mc:Ignorable="d"
         Title="{Binding TitleBar}"
@@ -21,8 +22,24 @@
 
         <!--// Title Bar //-->
         <Grid Grid.Row="0" Background="{StaticResource AppThemeBackgroundInverse}" MouseDown="Window_MouseDown">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                 <TextBlock Style="{StaticResource AppHeader}" Text="{Binding TitleBar}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                <Image Source="Assets/minimize-32.png" Stretch="None">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding MinimizeCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+                <Image Source="Assets/cancel-32.png" Stretch="None" Margin="10,0,0,0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding CloseCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
             </StackPanel>
         </Grid>
 

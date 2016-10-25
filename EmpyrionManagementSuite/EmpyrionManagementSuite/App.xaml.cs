@@ -1,4 +1,5 @@
 ﻿using EmpyrionManagementSuite.Themes;
+using EMS.Core.Util;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -16,8 +17,15 @@ namespace EmpyrionManagementSuite
 
             DispatcherUnhandledException += App_DispatcherUnhandledException;
 
-            // Initially always use dark theme, we can change it later from loaded user settings.
-            ChangeTheme(ThemeType.MORPHEUS_DARK);
+            try
+            {
+                // Initially always use dark theme, we can change it later from loaded user settings.
+                ChangeTheme(ThemeType.MORPHEUS_DARK);
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
         }
 
         private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
@@ -34,10 +42,17 @@ namespace EmpyrionManagementSuite
 
         public void ChangeTheme(ThemeType TYPE)
         {
-            var uri = new Uri(THEME.GetThemePath(TYPE), UriKind.RelativeOrAbsolute);
+            try
+            {
+                var uri = new Uri(THEME.GetThemePath(TYPE), UriKind.RelativeOrAbsolute);
 
-            ThemeDictionary.MergedDictionaries.Clear();
-            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+                ThemeDictionary.MergedDictionaries.Clear();
+                ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
         }
     }
 }

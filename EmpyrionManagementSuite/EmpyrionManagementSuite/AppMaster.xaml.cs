@@ -1,5 +1,7 @@
 ﻿using EmpyrionManagementSuite.ViewModel;
+using EMS.Core.Util;
 using EMS.Core.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -21,7 +23,14 @@ namespace EmpyrionManagementSuite
 
             Loaded += (s, f) =>
             {
-                ViewModel.Startup();
+                try
+                {
+                    ViewModel.Startup();
+                }
+                catch (Exception ex)
+                {
+                    AppLogger.Exception(ex);
+                }
             };
         }
 
@@ -33,8 +42,15 @@ namespace EmpyrionManagementSuite
 
         private void NavigationFrameContent_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            //TODO: add a page type to friendly name localization file matrix, but for now, this is ok for V1.
-            ViewModel.FramePageTitle = e.Content.GetType().Name;
+            try
+            {
+                //TODO: add a page type to friendly name localization file matrix, but for now, this is ok for V1.
+                ViewModel.FramePageTitle = e.Content.GetType().Name;
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
         }
     }
 }
