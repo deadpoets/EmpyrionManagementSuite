@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmpyrionManagementSuite"
-        DataContext="{Binding Source={StaticResource Locator}, Path=AppMasterViewModel}"
+        DataContext="{Binding Source={StaticResource Locator}, Path=AppMaster}"
         mc:Ignorable="d"
         Title="{Binding TitleBar}"
         WindowStartupLocation="CenterScreen"
@@ -15,15 +15,27 @@
     <Grid Background="{StaticResource AppThemeBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="45" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="530" />
         </Grid.RowDefinitions>
 
+        <!--// Title Bar //-->
         <Grid Grid.Row="0" Background="{StaticResource AppThemeBackgroundInverse}" MouseDown="Window_MouseDown">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
                 <TextBlock Style="{StaticResource AppHeader}" Text="{Binding TitleBar}" />
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1">
+
+        <!--// Page Info //-->
+        <Grid Grid.Row="1" Background="{StaticResource AppThemeBackgroundSecondary}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                <TextBlock Style="{StaticResource FramePageTitle}" Text="{Binding FramePageTitle}" />
+            </StackPanel>
+        </Grid>
+
+        <!--// Page Frame Content //-->
+        <Grid Grid.Row="2">
+            <Frame x:Name="NavigationFrameContent" Navigated="NavigationFrameContent_Navigated" NavigationUIVisibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Height="530"></Frame>
         </Grid>
     </Grid>
 </Window>

@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:EmpyrionManagementSuite.Themes">
     <SolidColorBrush x:Key="AppThemeBackground" Color="#2D2E2F" />
     <SolidColorBrush x:Key="AppThemeBackgroundInverse" Color="#FAFAFB" />
+    <SolidColorBrush x:Key="AppThemeBackgroundSecondary" Color="#595959" />
     <SolidColorBrush x:Key="AppThemeForeground" Color="#FFFFFF" />
     <SolidColorBrush x:Key="AppThemeForegroundInverse" Color="#000000" />
 
@@ -10,6 +11,20 @@
     <Style x:Key="AppHeader" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource AppThemeForegroundInverse}" />
         <Setter Property="FontSize" Value="21" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
+    </Style>
+
+    <!--// FramePageTitle TextBlock //-->
+    <Style x:Key="FramePageTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AppThemeForeground}" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <!--// HeaderOne TextBlock //-->
+    <Style x:Key="HeaderOne" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AppThemeForeground}" />
+        <Setter Property="FontSize" Value="21" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
     </Style>
 </ResourceDictionary>

@@ -1,6 +1,8 @@
+using EMS.Core.Navigation;
 using EMS.Core.ViewModels;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using System;
 
 namespace EmpyrionManagementSuite.ViewModel
 {
@@ -24,13 +26,13 @@ namespace EmpyrionManagementSuite.ViewModel
 
         private static void SetupNavigation()
         {
-            //var navigationService = new FrameNavigationService();
-            //navigationService.Configure("Timeline", new Uri("../Modules/Timeline.xaml", UriKind.Relative));
+            var navigationService = new FrameNavigationService();
+            navigationService.Configure("startup", new Uri("../Views/Startup.xaml", UriKind.Relative));
 
-            //SimpleIoc.Default.Register<IFrameNavigationService>(() => navigationService);
+            SimpleIoc.Default.Register<IFrameNavigationService>(() => navigationService);
         }
 
-        public AppMasterViewModel AppMasterViewModel
+        public AppMasterViewModel AppMaster
         {
             get
             {
