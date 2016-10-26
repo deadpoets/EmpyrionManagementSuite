@@ -1,5 +1,0 @@
-language: csharp
-solution: ./EmpyrionManagementSuite/EmpyrionManagementSuite.sln
-branches:
-  only:
-  - master
