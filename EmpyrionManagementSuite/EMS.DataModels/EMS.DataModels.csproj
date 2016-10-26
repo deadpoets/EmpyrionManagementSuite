@@ -45,6 +45,8 @@
     </Compile>
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\AppSettings.cs" />
+    <Compile Include="Models\LocalizationBase.cs" />
+    <Compile Include="Models\Resource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

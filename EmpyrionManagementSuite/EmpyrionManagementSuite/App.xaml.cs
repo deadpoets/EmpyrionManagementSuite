@@ -1,5 +1,6 @@
 ﻿using EmpyrionManagementSuite.Themes;
 using EMS.Core.Util;
+using EMS.DataModels.Models;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -11,6 +12,9 @@ namespace EmpyrionManagementSuite
     /// </summary>
     public partial class App : Application
     {
+        private LocalizationManager localizationManager;
+        private AppSettings settings;
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -19,8 +23,15 @@ namespace EmpyrionManagementSuite
 
             try
             {
-                // Initially always use dark theme, we can change it later from loaded user settings.
+                // Initially always use dark theme, we can change it
+                // later from loaded user settings.
                 ChangeTheme(ThemeType.MORPHEUS_DARK);
+
+                // Initialize the settings file.
+                settings = SettingsManager.Init();
+
+                // Initialize the localization manager
+                localizationManager = new LocalizationManager();
             }
             catch (Exception ex)
             {
@@ -53,6 +64,26 @@ namespace EmpyrionManagementSuite
             {
                 AppLogger.Exception(ex);
             }
+        }
+
+        /// <summary>
+        /// Returns the localization string from the resources file for
+        /// the active localization.
+        /// </summary>
+        /// <param name="KEY"></param>
+        /// <returns></returns>
+        public string GetLocalizationResourceValue(string KEY)
+        {
+            try
+            {
+                return localizationManager.GetResourceValue(settings.LocalizationCode, KEY);
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+
+            return "[LOCALIZATION ERROR] <" + KEY + ">";
         }
     }
 }

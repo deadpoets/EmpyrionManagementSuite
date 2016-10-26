@@ -1,4 +1,6 @@
-﻿using EMS.Core.Util;
+﻿using EmpyrionManagementSuite.ViewModel;
+using EMS.Core.ViewModels;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace EmpyrionManagementSuite.Views
@@ -8,6 +10,11 @@ namespace EmpyrionManagementSuite.Views
     /// </summary>
     public partial class Startup : Page
     {
+        public StartupViewModel ViewModel
+        {
+            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).Startup; }
+        }
+
         public Startup()
         {
             InitializeComponent();

@@ -130,6 +130,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Localizations\en-us.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -145,10 +148,17 @@
       <Project>{cf690a55-2c71-4fc0-8e2e-d78678f8b733}</Project>
       <Name>EMS.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EMS.DataModels\EMS.DataModels.csproj">
+      <Project>{7DF07C31-124E-45C2-A70F-1E1C7B417000}</Project>
+      <Name>EMS.DataModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\cancel-32.png" />
     <Resource Include="Assets\minimize-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\menu-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,7 +14,7 @@ namespace EmpyrionManagementSuite
     {
         public AppMasterViewModel ViewModel
         {
-            get { return ((ViewModelLocator)Application.Current.Resources["Locator"]).AppMaster; }
+            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).AppMaster; }
         }
 
         public AppMaster()
@@ -36,8 +36,17 @@ namespace EmpyrionManagementSuite
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
-                this.DragMove();
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
         }
 
         private void NavigationFrameContent_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)

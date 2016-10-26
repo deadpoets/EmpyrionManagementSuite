@@ -1,4 +1,5 @@
 ﻿using EMS.Core.Navigation;
+using System.Windows;
 
 namespace EMS.Core.ViewModels
 {
@@ -9,7 +10,7 @@ namespace EMS.Core.ViewModels
         public StartupViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = "Startup";
+            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
         }
     }
 }

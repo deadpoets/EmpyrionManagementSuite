@@ -2,7 +2,6 @@
 using EMS.Core.Util;
 using GalaSoft.MvvmLight.Command;
 using System;
-using System.Diagnostics;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -14,20 +13,17 @@ namespace EMS.Core.ViewModels
         private string framePageTitle;
         public RelayCommand MinimizeCommand { get; set; }
         public RelayCommand CloseCommand { get; set; }
+        public RelayCommand ShowMenuCommand { get; set; }
 
         public AppMasterViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
 
-            Name = "Empyrion Management Suite";
+            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("APP_NAME");
 
             try
             {
-                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-                string version = fvi.FileVersion;
-
-                titleBar = Name + " [" + version + "]";
+                titleBar = Name + " [" + VersionInfo.FileVersion + "]";
             }
             catch (Exception ex)
             {
@@ -39,6 +35,7 @@ namespace EMS.Core.ViewModels
             {
                 MinimizeCommand = new RelayCommand(MinimizeWindow);
                 CloseCommand = new RelayCommand(CloseApplication);
+                ShowMenuCommand = new RelayCommand(ShowMenu);
             }
             catch (Exception ex)
             {
@@ -80,10 +77,22 @@ namespace EMS.Core.ViewModels
             try
             {
                 //TODO: localization
-                if (MessageBox.Show("This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure?", "Quit?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show(((dynamic) Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic) Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     Application.Current.Shutdown();
                 }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void ShowMenu()
+        {
+            try
+            {
+                MessageBox.Show("//TODO: this will show the popout menu from the left.");
             }
             catch (Exception ex)
             {

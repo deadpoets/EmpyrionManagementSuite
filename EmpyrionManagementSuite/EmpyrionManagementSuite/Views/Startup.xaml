@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:EmpyrionManagementSuite.Views"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Startup}"
       mc:Ignorable="d"
       d:DesignHeight="530"
       d:DesignWidth="800"
@@ -15,7 +16,7 @@
 
         <Grid Grid.Row="0">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Style="{StaticResource HeaderOne}" Text="[LOCALIZATION] application is loading..." />
+                <TextBlock Style="{StaticResource HeaderOne}" Text="{Binding Name}" />
             </StackPanel>
         </Grid>
     </Grid>

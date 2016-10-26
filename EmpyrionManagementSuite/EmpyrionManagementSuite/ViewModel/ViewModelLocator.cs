@@ -7,8 +7,8 @@ using System;
 namespace EmpyrionManagementSuite.ViewModel
 {
     /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
+    /// This class contains static references to all the view models in
+    /// the application and provides an entry point for the bindings.
     /// </summary>
     public class ViewModelLocator
     {
@@ -22,6 +22,7 @@ namespace EmpyrionManagementSuite.ViewModel
             SetupNavigation();
 
             SimpleIoc.Default.Register<AppMasterViewModel>();
+            SimpleIoc.Default.Register<StartupViewModel>();
         }
 
         private static void SetupNavigation()
@@ -37,6 +38,14 @@ namespace EmpyrionManagementSuite.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<AppMasterViewModel>();
+            }
+        }
+
+        public StartupViewModel Startup
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<StartupViewModel>();
             }
         }
 
