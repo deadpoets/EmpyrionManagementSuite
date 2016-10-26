@@ -1,5 +1,5 @@
 language: csharp
-solution: EmpyrionManagementSuite.sln
+solution: ./EmpyrionManagementSuite/EmpyrionManagementSuite.sln
 branches:
   only:
   - master
