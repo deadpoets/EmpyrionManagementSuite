@@ -46,6 +46,10 @@
         {
             "Key": "STARTUP_LOADING",
             "Value": "Please wait while EMS loads..."
+        },
+        {
+            "Key": "CONTROL_BUTTON_SETTINGS",
+            "Value": "Settings"
         }
     ]
 }

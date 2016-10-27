@@ -8,7 +8,7 @@ namespace EMS.Core.ViewModels
 {
     public class AppMasterViewModel : ViewModelCommon
     {
-        private IFrameNavigationService navService;
+        public IFrameNavigationService navService;
         private string titleBar;
         private string framePageTitle;
         public RelayCommand MinimizeCommand { get; set; }
@@ -92,7 +92,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                MessageBox.Show("//TODO: this will show the popout menu from the left.");
+                ((dynamic) Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using EmpyrionManagementSuite.ViewModel;
+﻿using EmpyrionManagementSuite.UserControls;
+using EmpyrionManagementSuite.ViewModel;
 using EMS.Core.Util;
 using EMS.Core.ViewModels;
 using System;
@@ -32,6 +33,11 @@ namespace EmpyrionManagementSuite
                     AppLogger.Exception(ex);
                 }
             };
+        }
+
+        public SidebarMenu SidebarMenu
+        {
+            get { return SidebarMenuControl; }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
