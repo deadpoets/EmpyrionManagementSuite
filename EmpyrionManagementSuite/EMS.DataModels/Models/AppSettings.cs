@@ -6,5 +6,6 @@
         public string LocalizationCode { get; set; }
         public string GameInstallationPath { get; set; }
         public string ServersDirectory { get; set; }
+        public bool CheckForUpdates { get; set; }
     }
 }

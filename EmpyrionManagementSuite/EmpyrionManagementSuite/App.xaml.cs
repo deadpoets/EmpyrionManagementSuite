@@ -15,6 +15,18 @@ namespace EmpyrionManagementSuite
         private LocalizationManager localizationManager;
         private AppSettings settings;
 
+        public AppSettings Settings
+        {
+            get
+            {
+                return settings;
+            }
+            set
+            {
+                settings = value;
+            }
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

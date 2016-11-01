@@ -18,6 +18,14 @@ namespace EmpyrionManagementSuite.Views
         public Startup()
         {
             InitializeComponent();
+
+            Loaded += (s, f) =>
+            {
+                if (((dynamic) Application.Current).Settings.CheckForUpdates)
+                {
+                    ViewModel.CheckForUpdates();
+                }
+            };
         }
     }
 }

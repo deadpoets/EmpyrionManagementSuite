@@ -12,5 +12,6 @@ namespace EMS.Core.Util
         public static string LOGS_DIRECTORY = BASE_DIRECTORY + "logs";
         public static string LOGS_LOG_FILE = LOGS_DIRECTORY + "\\logs.json";
         public static string LOCALIZATION_DIRECTORY = BASE_DIRECTORY + "Localizations";
+        public static string UPDATE_JSON_URL = "https://raw.githubusercontent.com/MorpheusZero/EmpyrionManagementSuite/master/update.json";
     }
 }
