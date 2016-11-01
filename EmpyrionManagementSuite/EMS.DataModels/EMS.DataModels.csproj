@@ -48,6 +48,7 @@
     <Compile Include="Models\LocalizationBase.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\Update.cs" />
+    <Compile Include="Models\UpdateFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

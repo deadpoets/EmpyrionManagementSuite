@@ -6,5 +6,63 @@
 	"RequiresReinstall": false,
 	"Changelog": [
 					"The initial release of the application."
-				 ]
+				 ],
+	"UpdateManifest": [
+						{
+							"FileName": "EmpyrionManagementSuite.exe",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "EMS.Core.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "EMS.DataModels.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "GalaSoft.MvvmLight.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "GalaSoft.MvvmLight.Extras.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+												{
+							"FileName": "GalaSoft.MvvmLight.Platform.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "Microsoft.Practices.ServiceLocation.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "Newtonsoft.Json.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "System.Windows.Interactivity.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "YamlDotNet.dll",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#"
+						},
+						{
+							"FileName": "en-us.json",
+							"FileServerURL": "",
+							"RelativeInstallPath": "#Localizations"
+						}
+				      ]
+
 }
