@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Windows;
 
 namespace EMS.Core.Updates
 {
@@ -65,6 +66,10 @@ namespace EMS.Core.Updates
                     DownloadFile(f);
                     MoveFiles(f);
                 }
+
+                // restart app
+                MessageBox.Show("The app needs to be restarted for the update to take effect!", "Shutting Down...", MessageBoxButton.OK, MessageBoxImage.Information);
+                Application.Current.Shutdown();
             }
             catch (Exception ex)
             {
@@ -79,19 +84,9 @@ namespace EMS.Core.Updates
                 // Download File to temp directory
                 WebClient client = new WebClient();
 
-                client.DownloadDataCompleted += (s, f) =>
-                {
-                    try
-                    {
-                        File.WriteAllBytes(Constants.TEMP_DIR + "\\" + F.FileName, f.Result);
-                    }
-                    catch (Exception ex)
-                    {
-                        AppLogger.Exception(ex);
-                    }
-                };
+                var bytes = client.DownloadData(new Uri(F.FileServerURL));
 
-                client.DownloadDataAsync(new Uri(F.FileServerURL));
+                File.WriteAllBytes(Constants.TEMP_DIR + "\\" + F.FileName, bytes);
             }
             catch (Exception ex)
             {
