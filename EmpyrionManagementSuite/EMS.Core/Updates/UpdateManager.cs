@@ -54,14 +54,16 @@ namespace EMS.Core.Updates
         {
             try
             {
+                // where temporary downloads are placed.
                 if (!Directory.Exists(Constants.TEMP_DIR))
                 {
                     Directory.CreateDirectory(Constants.TEMP_DIR);
                 }
 
-                foreach (var f in update.UpdateManifest.ToList())
+                foreach (var f in update.UpdateManifest.Where(x => x.RequiresUpdate).ToList())
                 {
                     DownloadFile(f);
+                    MoveFiles(f);
                 }
             }
             catch (Exception ex)
@@ -90,6 +92,36 @@ namespace EMS.Core.Updates
                 };
 
                 client.DownloadDataAsync(new Uri(F.FileServerURL));
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void MoveFiles(UpdateFile F)
+        {
+            try
+            {
+                var installationFilePath = Constants.BASE_DIRECTORY + (F.RelativeInstallPath == "#" ? "" : F.RelativeInstallPath.Replace("#", "\\")) + F.FileName;
+                var updateFilePath = Constants.TEMP_DIR + "\\" + F.FileName;
+
+                // CHeck for existance of .bak file
+                if (File.Exists(installationFilePath + ".bak"))
+                {
+                    // Delete the older backup
+                    File.Delete(installationFilePath + ".bak");
+                }
+
+                // CHeck for existence of old file, and rename it if it exists...
+                if (File.Exists(installationFilePath))
+                {
+                    // Rename the old file.
+                    File.Move(installationFilePath, installationFilePath + ".bak");
+                }
+
+                // Move the new file into root directory
+                File.Move(updateFilePath, installationFilePath);
             }
             catch (Exception ex)
             {

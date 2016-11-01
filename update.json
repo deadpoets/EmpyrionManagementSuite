@@ -1,11 +1,12 @@
 {
 	"LatestVersion": "1.0.1",
 	"LastUpdated": "2016-11-01T04:05:04.0200676Z",
-	"Description": "Initial Release",
+	"Description": "IThe very first patch test for Empyrion Management Suite!",
 	"UpdateType": "patch",
 	"RequiresReinstall": false,
 	"Changelog": [
-					"The initial release of the application."
+					"* Modified update logic to run in the background.",
+					"* Added whether or not a file should be installed or not."
 				 ],
 	"UpdateManifest": [
 						{
