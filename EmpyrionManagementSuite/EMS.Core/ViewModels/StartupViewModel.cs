@@ -68,10 +68,35 @@ namespace EMS.Core.ViewModels
 
                 foreach (var f in UPDATES.UpdateManifest.ToList())
                 {
-                    // Download File to temp directory
-                    WebClient wc = new WebClient();
-                    wc.DownloadFile(f.FileServerURL, Constants.BASE_DIRECTORY + f.RelativeInstallPath == "#" ? "" : f.RelativeInstallPath.Replace("#", "\\") + "\\" + f.FileName + "TEST");
+                    DownloadFile(f);
                 }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void DownloadFile(UpdateFile F)
+        {
+            try
+            {
+                // Download File to temp directory
+                WebClient client = new WebClient();
+
+                client.DownloadDataCompleted += (s, f) =>
+                {
+                    try
+                    {
+                        File.WriteAllBytes(Constants.TEMP_DIR + "\\" + F.FileName, f.Result);
+                    }
+                    catch (Exception ex)
+                    {
+                        AppLogger.Exception(ex);
+                    }
+                };
+
+                client.DownloadDataAsync(new Uri(F.FileServerURL));
             }
             catch (Exception ex)
             {
