@@ -2,6 +2,8 @@
 using EMS.DataModels.Models;
 using Newtonsoft.Json;
 using System;
+using System.IO;
+using System.Linq;
 using System.Net;
 
 namespace EMS.Core.Updates
@@ -41,6 +43,53 @@ namespace EMS.Core.Updates
                     isUpdateAvailable = true;
                     AppLogger.Info("Version " + latestVersion + " is available. You are running version " + localVersion + ".");
                 }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        public void PerformUpdates()
+        {
+            try
+            {
+                if (!Directory.Exists(Constants.TEMP_DIR))
+                {
+                    Directory.CreateDirectory(Constants.TEMP_DIR);
+                }
+
+                foreach (var f in update.UpdateManifest.ToList())
+                {
+                    DownloadFile(f);
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void DownloadFile(UpdateFile F)
+        {
+            try
+            {
+                // Download File to temp directory
+                WebClient client = new WebClient();
+
+                client.DownloadDataCompleted += (s, f) =>
+                {
+                    try
+                    {
+                        File.WriteAllBytes(Constants.TEMP_DIR + "\\" + F.FileName, f.Result);
+                    }
+                    catch (Exception ex)
+                    {
+                        AppLogger.Exception(ex);
+                    }
+                };
+
+                client.DownloadDataAsync(new Uri(F.FileServerURL));
             }
             catch (Exception ex)
             {

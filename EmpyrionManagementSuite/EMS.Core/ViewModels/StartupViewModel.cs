@@ -1,11 +1,7 @@
 ﻿using EMS.Core.Navigation;
 using EMS.Core.Updates;
 using EMS.Core.Util;
-using EMS.DataModels.Models;
 using System;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -17,7 +13,7 @@ namespace EMS.Core.ViewModels
         public StartupViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
+            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
         }
 
         public void CheckForUpdates()
@@ -45,58 +41,9 @@ namespace EMS.Core.ViewModels
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        PerformUpdates(um.Update);
+                        um.PerformUpdates();
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                AppLogger.Exception(ex);
-            }
-        }
-
-        private void PerformUpdates(Update UPDATES)
-        {
-            try
-            {
-                var success = false;
-
-                if (!Directory.Exists(Constants.TEMP_DIR))
-                {
-                    Directory.CreateDirectory(Constants.TEMP_DIR);
-                }
-
-                foreach (var f in UPDATES.UpdateManifest.ToList())
-                {
-                    DownloadFile(f);
-                }
-            }
-            catch (Exception ex)
-            {
-                AppLogger.Exception(ex);
-            }
-        }
-
-        private void DownloadFile(UpdateFile F)
-        {
-            try
-            {
-                // Download File to temp directory
-                WebClient client = new WebClient();
-
-                client.DownloadDataCompleted += (s, f) =>
-                {
-                    try
-                    {
-                        File.WriteAllBytes(Constants.TEMP_DIR + "\\" + F.FileName, f.Result);
-                    }
-                    catch (Exception ex)
-                    {
-                        AppLogger.Exception(ex);
-                    }
-                };
-
-                client.DownloadDataAsync(new Uri(F.FileServerURL));
             }
             catch (Exception ex)
             {
