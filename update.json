@@ -1,0 +1,10 @@
+{
+	"LatestVersion": "1.0.1",
+	"LastUpdated": "2016-11-01T04:05:04.0200676Z",
+	"Description": "Initial Release",
+	"UpdateType": "patch",
+	"RequiresReinstall": false,
+	"Changelog": [
+					"The initial release of the application."
+				 ]
+}
