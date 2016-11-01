@@ -1,7 +1,11 @@
 ﻿using EMS.Core.Navigation;
 using EMS.Core.Updates;
 using EMS.Core.Util;
+using EMS.DataModels.Models;
 using System;
+using System.IO;
+using System.Linq;
+using System.Net;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -41,8 +45,32 @@ namespace EMS.Core.ViewModels
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("YES");
+                        PerformUpdates(um.Update);
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void PerformUpdates(Update UPDATES)
+        {
+            try
+            {
+                var success = false;
+
+                if (!Directory.Exists(Constants.TEMP_DIR))
+                {
+                    Directory.CreateDirectory(Constants.TEMP_DIR);
+                }
+
+                foreach (var f in UPDATES.UpdateManifest.ToList())
+                {
+                    // Download File to temp directory
+                    WebClient wc = new WebClient();
+                    wc.DownloadFile(f.FileServerURL, Constants.BASE_DIRECTORY + f.RelativeInstallPath == "#" ? "" : f.RelativeInstallPath.Replace("#", "\\") + "\\" + f.FileName + "TEST");
                 }
             }
             catch (Exception ex)
