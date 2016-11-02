@@ -1,24 +1,25 @@
-﻿<Page x:Class="EmpyrionManagementSuite.Views.Startup"
+﻿<Page x:Class="EmpyrionManagementSuite.Views.Install"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Install}"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:EmpyrionManagementSuite.Views"
-      xmlns:controls="clr-namespace:EmpyrionManagementSuite.UserControls"
-      DataContext="{Binding Source={StaticResource Locator}, Path=Startup}"
       mc:Ignorable="d"
       d:DesignHeight="530"
       d:DesignWidth="800"
-      Title="Startup">
+      Title="Install">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="530" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <controls:LoadingIndicator Width="150" Height="150" />
-                <TextBlock Style="{StaticResource HeaderOne}" Text="{Binding Name}" />
+            <StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <TextBlock Width="500" Text="{Binding WelcomeMessage}" TextWrapping="Wrap" Foreground="{StaticResource AppThemeForeground}" />
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

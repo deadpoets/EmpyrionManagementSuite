@@ -21,6 +21,9 @@ namespace EmpyrionManagementSuite.Views
 
             Loaded += (s, f) =>
             {
+                ViewModel.Start();
+
+                // check for updates
                 if (((dynamic) Application.Current).Settings.CheckForUpdates)
                 {
                     ViewModel.CheckForUpdates();

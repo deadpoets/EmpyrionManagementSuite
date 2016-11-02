@@ -2,6 +2,7 @@
 using EMS.Core.Updates;
 using EMS.Core.Util;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -13,7 +14,7 @@ namespace EMS.Core.ViewModels
         public StartupViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
+            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
         }
 
         public void CheckForUpdates()
@@ -49,6 +50,50 @@ namespace EMS.Core.ViewModels
             {
                 AppLogger.Exception(ex);
             }
+        }
+
+        /// <summary>
+        /// Processes that need to happen before the main app is started.
+        /// </summary>
+        public async void Start()
+        {
+            try
+            {
+                // Force the app to wait for a moment to make sure its
+                // caught up
+                await Task.Delay(TimeSpan.FromSeconds(2.25));
+
+                // if the app is not configured, we need to go to the
+                // install screen first.
+                if (!IsAppConfigured())
+                {
+                    navService.NavigateTo("install");
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private bool IsAppConfigured()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(((dynamic) Application.Current).Settings.GameInstallationPath))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+            return false;
         }
     }
 }
