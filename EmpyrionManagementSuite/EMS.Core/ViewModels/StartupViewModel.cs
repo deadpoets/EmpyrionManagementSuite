@@ -14,7 +14,7 @@ namespace EMS.Core.ViewModels
         public StartupViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
+            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
         }
 
         public void CheckForUpdates()
@@ -67,7 +67,7 @@ namespace EMS.Core.ViewModels
                 // install screen first.
                 if (!IsAppConfigured())
                 {
-                    navService.NavigateTo("install");
+                    navService.NavigateTo("home");
                 }
             }
             catch (Exception ex)
@@ -80,7 +80,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                if (string.IsNullOrEmpty(((dynamic) Application.Current).Settings.GameInstallationPath))
+                if (string.IsNullOrEmpty(((dynamic)Application.Current).Settings.GameInstallationPath))
                 {
                     return false;
                 }

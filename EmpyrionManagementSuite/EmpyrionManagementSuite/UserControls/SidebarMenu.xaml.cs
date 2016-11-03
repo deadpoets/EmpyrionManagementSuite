@@ -21,7 +21,7 @@ namespace EmpyrionManagementSuite.UserControls
             Loaded += (s, f) =>
             {
                 this.DataContext = new SidebarMenuViewModel();
-                navService = ((dynamic) Application.Current.MainWindow).ViewModel.navService;
+                navService = ((dynamic)Application.Current.MainWindow).ViewModel.navService;
                 SidebarContainer.Visibility = Visibility.Collapsed;
             };
         }
@@ -40,6 +40,8 @@ namespace EmpyrionManagementSuite.UserControls
                 else
                 {
                     SidebarContainer.Visibility = Visibility.Visible;
+                    SidebarContainer.BringIntoView();
+                    this.BringIntoView();
                 }
             }
             catch (Exception ex)

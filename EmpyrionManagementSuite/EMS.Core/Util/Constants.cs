@@ -15,5 +15,6 @@ namespace EMS.Core.Util
         public static string TEMP_DIR = BASE_DIRECTORY + "tmp";
         public static string BAK_DIR = BASE_DIRECTORY + "bak";
         public static string UPDATE_JSON_URL = "https://raw.githubusercontent.com/MorpheusZero/EmpyrionManagementSuite/master/update.json";
+        public static string HOME_DASHBOARD_URL = "http://empyrionmanagementsuite.tumblr.com/";
     }
 }

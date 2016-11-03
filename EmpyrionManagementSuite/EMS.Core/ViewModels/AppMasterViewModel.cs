@@ -19,7 +19,7 @@ namespace EMS.Core.ViewModels
         {
             navService = NAVSERVICE;
 
-            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("APP_NAME");
+            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("APP_NAME");
 
             try
             {
@@ -77,7 +77,7 @@ namespace EMS.Core.ViewModels
             try
             {
                 //TODO: localization
-                if (MessageBox.Show(((dynamic) Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic) Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show(((dynamic)Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic)Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     Application.Current.Shutdown();
                 }
@@ -92,7 +92,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                ((dynamic) Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+                ((dynamic)Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
             }
             catch (Exception ex)
             {

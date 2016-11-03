@@ -25,6 +25,7 @@ namespace EmpyrionManagementSuite.ViewModel
             SimpleIoc.Default.Register<StartupViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<InstallViewModel>();
+            SimpleIoc.Default.Register<HomeViewModel>();
         }
 
         private static void SetupNavigation()
@@ -33,6 +34,7 @@ namespace EmpyrionManagementSuite.ViewModel
             navigationService.Configure("startup", new Uri("../Views/Startup.xaml", UriKind.Relative));
             navigationService.Configure("settings", new Uri("../Views/Settings.xaml", UriKind.Relative));
             navigationService.Configure("install", new Uri("../Views/Install.xaml", UriKind.Relative));
+            navigationService.Configure("home", new Uri("../Views/Home.xaml", UriKind.Relative));
 
             SimpleIoc.Default.Register<IFrameNavigationService>(() => navigationService);
         }
@@ -66,6 +68,14 @@ namespace EmpyrionManagementSuite.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<InstallViewModel>();
+            }
+        }
+
+        public HomeViewModel Home
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<HomeViewModel>();
             }
         }
 

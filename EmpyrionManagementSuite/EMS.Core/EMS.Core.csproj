@@ -85,6 +85,7 @@
     <Compile Include="Util\SettingsManager.cs" />
     <Compile Include="Util\VersionInfo.cs" />
     <Compile Include="ViewModels\AppMasterViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\InstallViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartupViewModel.cs" />

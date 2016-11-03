@@ -91,6 +91,9 @@
       <DependentUpon>SidebarMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Install.xaml.cs">
       <DependentUpon>Install.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SidebarMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
