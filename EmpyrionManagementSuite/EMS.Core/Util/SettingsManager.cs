@@ -40,5 +40,27 @@ namespace EMS.Core.Util
 
             return settings;
         }
+
+        /// <summary>
+        /// Reads the current AppSettings file from disk.
+        /// </summary>
+        /// <returns></returns>
+        public static AppSettings SaveSettings(AppSettings SETTINGS)
+        {
+            var settings = new AppSettings();
+
+            try
+            {
+                File.WriteAllText(Constants.APPSETTINGS_FILE, JsonConvert.SerializeObject(SETTINGS, Formatting.Indented));
+
+                settings = SETTINGS;
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+
+            return settings;
+        }
     }
 }

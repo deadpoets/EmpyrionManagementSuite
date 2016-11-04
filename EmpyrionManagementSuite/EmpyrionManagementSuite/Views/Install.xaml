@@ -18,7 +18,17 @@
         <Grid Grid.Row="0">
             <StackPanel>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
-                    <TextBlock Width="500" Text="{Binding WelcomeMessage}" TextWrapping="Wrap" Foreground="{StaticResource AppThemeForeground}" />
+                    <Border BorderThickness="0,0,0,2" BorderBrush="{StaticResource AppThemeForeground}">
+                        <TextBlock Margin="10" Width="500" FontWeight="Bold" Text="{Binding WelcomeMessage}" TextWrapping="Wrap" Foreground="{StaticResource AppThemeForeground}" />
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <TextBlock Width="150" Text="{Binding GameInstallationPath}" TextWrapping="Wrap" Foreground="{StaticResource AppThemeForeground}" Margin="0,0,5,0" />
+                        <TextBox Width="350" IsEnabled="False" Text="{Binding GamePathSource}" Margin="0,0,5,0" />
+                        <Button Width="20" Content="+" Command="{Binding OpenFolderDialogCommand}" />
+                    </StackPanel>
+
+                    <Button Width="150" Margin="0,20,0,0" Style="{StaticResource PrimaryButton}" Content="{Binding ConfirmSetupButton}" Command="{Binding ConfirmSetupCommand}" />
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -11,7 +11,15 @@ namespace EMS.Core.UserControlViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_SETTINGS");
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_SETTINGS");
+            }
+        }
+
+        public string HomeButton
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_HOME");
             }
         }
     }

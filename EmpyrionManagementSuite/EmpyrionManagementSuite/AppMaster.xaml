@@ -24,7 +24,7 @@
         <!--// Title Bar //-->
         <Grid Grid.Row="0" Background="{StaticResource AppThemeBackgroundInverse}" MouseDown="Window_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
-                <Image Source="Assets/menu-32.png" Stretch="None" Margin="0,0,10,0">
+                <Image x:Name="menuToggle" Source="Assets/menu-32.png" Stretch="None" Margin="0,0,10,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseDown">
                             <i:InvokeCommandAction Command="{Binding ShowMenuCommand}" />

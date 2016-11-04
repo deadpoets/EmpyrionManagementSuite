@@ -2,7 +2,6 @@
 using EMS.Core.Updates;
 using EMS.Core.Util;
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -55,17 +54,17 @@ namespace EMS.Core.ViewModels
         /// <summary>
         /// Processes that need to happen before the main app is started.
         /// </summary>
-        public async void Start()
+        public void Start()
         {
             try
             {
-                // Force the app to wait for a moment to make sure its
-                // caught up
-                await Task.Delay(TimeSpan.FromSeconds(2.25));
-
                 // if the app is not configured, we need to go to the
                 // install screen first.
                 if (!IsAppConfigured())
+                {
+                    navService.NavigateTo("install");
+                }
+                else
                 {
                     navService.NavigateTo("home");
                 }

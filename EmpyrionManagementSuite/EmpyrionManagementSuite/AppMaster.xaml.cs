@@ -4,6 +4,7 @@ using EMS.Core.Util;
 using EMS.Core.ViewModels;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace EmpyrionManagementSuite
@@ -15,7 +16,7 @@ namespace EmpyrionManagementSuite
     {
         public AppMasterViewModel ViewModel
         {
-            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).AppMaster; }
+            get { return ((ViewModelLocator)Application.Current.Resources["Locator"]).AppMaster; }
         }
 
         public AppMaster()
@@ -40,6 +41,11 @@ namespace EmpyrionManagementSuite
             get { return SidebarMenuControl; }
         }
 
+        public Image MenuToggle
+        {
+            get { return menuToggle; }
+        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -61,6 +67,8 @@ namespace EmpyrionManagementSuite
             {
                 //TODO: add a page type to friendly name localization file matrix, but for now, this is ok for V1.
                 ViewModel.FramePageTitle = e.Content.GetType().Name;
+
+                ViewModel.NavigationBehaviour();
             }
             catch (Exception ex)
             {

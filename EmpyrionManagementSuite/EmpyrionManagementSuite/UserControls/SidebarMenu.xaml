@@ -18,7 +18,8 @@
         <Grid Grid.Row="0" Grid.Column="0" x:Name="SidebarContainer" Background="{StaticResource AppThemeBackgroundSecondary}">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="530">
                 <StackPanel Margin="5">
-                    <Button Content="{Binding SettingsButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="0" Margin="0,0,0,5" />
+                    <Button Content="{Binding HomeButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="0" Margin="0,0,0,5" />
+                    <Button Content="{Binding SettingsButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="1" Margin="0,0,0,5" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>

@@ -17,6 +17,9 @@ namespace EMS.Core.ViewModels
 
         public AppMasterViewModel(IFrameNavigationService NAVSERVICE)
         {
+            // Hide the menu toggle on first load
+            HideMenuToggle();
+
             navService = NAVSERVICE;
 
             Name = ((dynamic)Application.Current).GetLocalizationResourceValue("APP_NAME");
@@ -76,7 +79,6 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                //TODO: localization
                 if (MessageBox.Show(((dynamic)Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic)Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     Application.Current.Shutdown();
@@ -93,6 +95,57 @@ namespace EMS.Core.ViewModels
             try
             {
                 ((dynamic)Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        public void NavigationBehaviour()
+        {
+            try
+            {
+                ResetAll();
+
+                switch (FramePageTitle)
+                {
+                    case "Startup":
+                        HideMenuToggle();
+                        break;
+
+                    case "Install":
+                        HideMenuToggle();
+                        break;
+
+                    case "Home":
+                        ((dynamic)Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void HideMenuToggle()
+        {
+            try
+            {
+                ((dynamic)Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void ResetAll()
+        {
+            try
+            {
+                ((dynamic)Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {

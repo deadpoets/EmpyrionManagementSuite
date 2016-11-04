@@ -62,6 +62,11 @@ namespace EmpyrionManagementSuite.UserControls
             switch (int.Parse(btn.CommandParameter.ToString()))
             {
                 case 0:
+                    navService.NavigateTo("home");
+                    ToggleVisiblity();
+                    break;
+
+                case 1:
                     navService.NavigateTo("settings");
                     ToggleVisiblity();
                     break;
