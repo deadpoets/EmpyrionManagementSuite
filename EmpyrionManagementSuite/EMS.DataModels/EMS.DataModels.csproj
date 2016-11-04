@@ -46,6 +46,7 @@
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\LocalizationBase.cs" />
+    <Compile Include="Models\PlanetaryBiome.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\Update.cs" />
     <Compile Include="Models\UpdateFile.cs" />
