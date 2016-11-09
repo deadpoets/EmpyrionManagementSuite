@@ -1,16 +1,9 @@
 ﻿using EmpyrionManagementSuite.ViewModel;
 using EMS.Core.Util;
 using EMS.Core.ViewModels;
-using EMS.Core.Yaml;
-using EMS.DataModels.Models;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 
 namespace EmpyrionManagementSuite.Views
 {
