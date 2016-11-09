@@ -91,6 +91,7 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartupViewModel.cs" />
     <Compile Include="ViewModels\ViewModelCommon.cs" />
+    <Compile Include="Yaml\YamlConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EMS.DataModels\EMS.DataModels.csproj">

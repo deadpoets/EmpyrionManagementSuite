@@ -5,6 +5,5 @@
     /// </summary>
     public class PlanetaryBiome
     {
-        public string Name { get; set; }
     }
 }
