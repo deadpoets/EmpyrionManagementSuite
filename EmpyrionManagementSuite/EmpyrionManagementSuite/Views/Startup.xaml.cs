@@ -1,4 +1,5 @@
 ﻿using EmpyrionManagementSuite.ViewModel;
+using EMS.Core.Util;
 using EMS.Core.ViewModels;
 using EMS.Core.Yaml;
 using EMS.DataModels.Models;
@@ -29,14 +30,21 @@ namespace EmpyrionManagementSuite.Views
 
             Loaded += (s, f) =>
             {
-                var sectors = YamlConverter.DeserializeFile<List<Sector>>("D:\\Sectors.yaml");
-
-                ViewModel.Start();
-
-                // check for updates
-                if (((dynamic)Application.Current).Settings.CheckForUpdates)
+                try
                 {
-                    ViewModel.CheckForUpdates();
+                    ViewModel.Start();
+
+                    // check for updates
+                    if (((dynamic)Application.Current).Settings.CheckForUpdates)
+                    {
+                        ViewModel.CheckForUpdates();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    AppLogger.Exception(ex);
+                    MessageBox.Show(ex.Message);
+                    Application.Current.Shutdown();
                 }
             };
         }
