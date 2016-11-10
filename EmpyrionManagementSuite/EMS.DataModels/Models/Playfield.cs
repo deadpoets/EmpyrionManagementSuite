@@ -27,15 +27,7 @@ namespace EMS.DataModels.Models
         public int Difficulty { get; set; }
         public string PlayfieldType { get; set; }
         public string SunFlare { get; set; }
-
-        //TODO: need to normalize
-        public object LocalEffect { get; set; }
-
-        //# Special Effects                   # Please don't change
-        //LocalEffect:
-        //    Name: EnvironmentalEffects/Grime
-        //    MaxHeight: 200
-
+        public LocalEffect LocalEffect { get; set; }
         public bool AtmosphereEnabled { get; set; }
         public string AtmosphereColor { get; set; }
         public string SkyColor { get; set; }
@@ -58,70 +50,8 @@ namespace EMS.DataModels.Models
         public string CloudsZenithColor { get; set; }
         public string CloudsHorizonColor { get; set; }
         public int WindSpeed { get; set; }
-
-        //TODO: normalize object
-        public List<object> FixedResources { get; set; }
-
-        //### Fixed Resources for Seed=0      # No functionality in Seed>0 games
-        //# pos, radius, name
-        //FixedResources:
-        //    - Name: IronResource
-        //      Pos: [ -333, 72, -552 ]
-        //        Radius: 10
-
-        //    - Name: CobaltResource
-        //      Pos: [ 1859, 94 ,1042 ]
-        //        Radius: 9
-
-        //    - Name: MagnesiumResource
-        //      Pos: [ 86, 32, 638 ]
-        //        Radius: 6
-
-        //TODO: normalize object
-        public List<object> RandomResources { get; set; }
-
-        //### Randomly distributed resources    # For Seed>0 games     # Please don't change
-        //RandomResources:
-        //    - Name: ErestrumResource
-        //      CountMinMax: [ 5, 8 ]   # range of number of resources to distribute on planet
-        //      SizeMinMax: [ 8, 14 ]  # range of sizes of resource depots
-        //      DepthMinMax: [ 0, 1 ]   # Range of how deep to bury depots below terrain surface (e.g. 0 = partly visible, 3 = top of depot starts 3m below surface)
-        //      DroneProb: 0.4          # probability that the resource is defended by drones
-        //      MaxDroneCount: 1        # if at all, 1..n drones will defend the resource [default = 1]
-
-        //    - Name: SathiumResource
-        //      CountMinMax: [ 4, 7 ]
-        //      SizeMinMax: [ 8, 13 ]
-        //      DepthMinMax: [ 0, 1 ]
-        //      DroneProb: 0.4
-
-        //    - Name: PromethiumResource
-        //      CountMinMax: [ 2, 3 ]
-        //      SizeMinMax: [ 8, 13 ]
-        //      DepthMinMax: [ 0, 1 ]
-        //      DroneProb: 0.4
-
-        //    - Name: GoldResource
-        //      CountMinMax: [ 3, 4 ]
-        //      SizeMinMax: [ 3, 6 ]
-        //      DepthMinMax: [ 0, 15 ]
-        //      DroneProb: 0.9
-
-        //### Terrain and Decorations
-        //# Terrain and Local Decoration
-
-        //TODO: normalize object
-        public object Terrain { get; set; }
-
-        //Terrain:
-        //    Name: Lava
-        //    PoleLevel: 28                       # Pole level of planet
-        //    NoiseStrength: 0.3
-        //    ColorChange:
-        //        YFadeCenter: 80
-        //        YFadeRange: 40
-        //        YFadeMin: -0.15
-        //        YFadeMax: 0.2
+        public List<FixedResource> FixedResources { get; set; }
+        public Terrain Terrain { get; set; }
 
         //TODO: normalize object
         public object MainBiome { get; set; }

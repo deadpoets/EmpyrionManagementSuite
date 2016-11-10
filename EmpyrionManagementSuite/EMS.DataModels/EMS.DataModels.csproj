@@ -46,11 +46,16 @@
     <Compile Include="Models\AppCredit.cs" />
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\AppSettings.cs" />
+    <Compile Include="Models\ColorChange.cs" />
+    <Compile Include="Models\FixedResource.cs" />
+    <Compile Include="Models\LocalEffect.cs" />
     <Compile Include="Models\LocalizationBase.cs" />
     <Compile Include="Models\PlanetaryBiome.cs" />
     <Compile Include="Models\Playfield.cs" />
+    <Compile Include="Models\RandomResource.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\Sector.cs" />
+    <Compile Include="Models\Terrain.cs" />
     <Compile Include="Models\TerrainItem.cs" />
     <Compile Include="Models\Update.cs" />
     <Compile Include="Models\UpdateFile.cs" />
