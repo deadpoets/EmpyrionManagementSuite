@@ -6,37 +6,21 @@
              xmlns:local="clr-namespace:EmpyrionManagementSuite.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="120"
-             d:DesignWidth="450">
-    <Grid Margin="0,0,0,20">
+             d:DesignWidth="450"
+             Height="120">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="20" />
+            <RowDefinition Height="120" />
         </Grid.RowDefinitions>
 
-        <Border>
-            <StackPanel>
-                <!--// Header //-->
-                <Grid Grid.Row="0">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="{Binding Name}" Style="{StaticResource HeaderOne}" />
-                    </StackPanel>
-                </Grid>
-
-                <!--// Description //-->
-                <Grid Grid.Row="1">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="{Binding Description}" />
-                    </StackPanel>
-                </Grid>
-
-                <!--// URL //-->
-                <Grid Grid.Row="2">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="{Binding URL}" />
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
-        </Border>
+        <Grid Grid.Row="0">
+            <Border BorderBrush="{StaticResource AppThemeForeground}" BorderThickness="1" Margin="0,0,0,12">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
+                    <TextBlock TextAlignment="Center" Text="{Binding Name}" Style="{StaticResource HeaderOne}" />
+                    <TextBlock TextAlignment="Center" Text="{Binding Description}" Style="{StaticResource ParagraphText}" />
+                    <TextBlock TextAlignment="Center" Text="{Binding URL}" Style="{StaticResource ParagraphText}" />
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

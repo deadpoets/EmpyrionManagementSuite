@@ -30,6 +30,7 @@ namespace EmpyrionManagementSuite.Views
                     var credits = ViewModel.GetCreditsCollection();
 
                     var panel = new StackPanel();
+                    panel.Margin = new Thickness(15);
 
                     foreach (var credit in credits.ToList())
                     {

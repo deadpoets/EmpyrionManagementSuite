@@ -40,8 +40,6 @@ namespace EmpyrionManagementSuite.UserControls
                 else
                 {
                     SidebarContainer.Visibility = Visibility.Visible;
-                    SidebarContainer.BringIntoView();
-                    this.BringIntoView();
                 }
             }
             catch (Exception ex)

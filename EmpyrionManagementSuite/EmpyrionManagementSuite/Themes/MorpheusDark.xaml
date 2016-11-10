@@ -32,6 +32,12 @@
         <Setter Property="FontWeight" Value="ExtraBold" />
     </Style>
 
+    <!--// ParagraphText TextBlock //-->
+    <Style x:Key="ParagraphText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AppThemeForeground}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
     <!--// Primary Standard Button Style //-->
     <Style x:Key="PrimaryButton" TargetType="Button">
 
