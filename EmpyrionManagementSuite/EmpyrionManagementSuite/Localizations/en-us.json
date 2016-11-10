@@ -56,6 +56,10 @@
       "Value": "Home"
     },
     {
+      "Key": "CONTROL_BUTTON_CREDITS",
+      "Value": "Credits"
+    },
+    {
       "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
       "Value": "Confirm Setup"
     },

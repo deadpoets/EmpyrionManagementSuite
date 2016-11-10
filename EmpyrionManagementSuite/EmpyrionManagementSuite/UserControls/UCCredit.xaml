@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="EmpyrionManagementSuite.UserControls.UCCredit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EmpyrionManagementSuite.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="120"
+             d:DesignWidth="450">
+    <Grid Margin="0,0,0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Border>
+            <StackPanel>
+                <!--// Header //-->
+                <Grid Grid.Row="0">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding Name}" Style="{StaticResource HeaderOne}" />
+                    </StackPanel>
+                </Grid>
+
+                <!--// Description //-->
+                <Grid Grid.Row="1">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding Description}" />
+                    </StackPanel>
+                </Grid>
+
+                <!--// URL //-->
+                <Grid Grid.Row="2">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding URL}" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -71,6 +71,11 @@ namespace EmpyrionManagementSuite.UserControls
                     ToggleVisiblity();
                     break;
 
+                case 2:
+                    navService.NavigateTo("credits");
+                    ToggleVisiblity();
+                    break;
+
                 default:
                     MessageBox.Show("ERROR");
                     break;

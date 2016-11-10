@@ -43,6 +43,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Models\AppCredit.cs" />
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\LocalizationBase.cs" />

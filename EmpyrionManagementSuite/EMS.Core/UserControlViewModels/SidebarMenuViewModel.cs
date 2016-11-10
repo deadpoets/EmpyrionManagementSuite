@@ -22,5 +22,13 @@ namespace EMS.Core.UserControlViewModels
                 return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_HOME");
             }
         }
+
+        public string CreditsButton
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_CREDITS");
+            }
+        }
     }
 }
