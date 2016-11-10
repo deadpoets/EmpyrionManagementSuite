@@ -35,13 +35,29 @@ namespace EMS.Core.ViewModels
                     }
 
                     template += Environment.NewLine;
-                    template += "Would you like to update now?";
+
+                    if (um.Update.RequiresReinstall)
+                    {
+                        template += "This version requires a fresh reinstall of the product. Your custom content should stay intact; however, please make a backup of your installation directory. Press [YES] to be directed to the full download site." + Environment.NewLine;
+                    }
+                    else
+                    {
+                        template += "Would you like to auto-update now?";
+                    }
 
                     var result = MessageBox.Show(template, "Updates are available!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        um.PerformUpdates();
+                        if (um.Update.RequiresReinstall)
+                        {
+                            System.Diagnostics.Process.Start(um.Update.LatestReleaseURL);
+                            Application.Current.Shutdown();
+                        }
+                        else
+                        {
+                            um.PerformUpdates();
+                        }
                     }
                 }
             }

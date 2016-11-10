@@ -13,6 +13,7 @@ namespace EMS.DataModels.Models
         public string Description { get; set; }
         public string UpdateType { get; set; }
         public bool RequiresReinstall { get; set; }
+        public string LatestReleaseURL { get; set; }
         public List<string> Changelog { get; set; }
         public List<UpdateFile> UpdateManifest { get; set; }
     }

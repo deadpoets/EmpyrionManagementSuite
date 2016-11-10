@@ -1,9 +1,10 @@
 {
 	"LatestVersion": "1.0.1",
-	"LastUpdated": "2016-11-01T04:05:04.0200676Z",
-	"Description": "IThe very first patch test for Empyrion Management Suite!",
+	"LastUpdated": "2016-11-10T04:05:04.0200676Z",
+	"Description": "The very first release for Empyrion Management Suite!",
 	"UpdateType": "patch",
 	"RequiresReinstall": false,
+	"LatestReleaseURL": "https://morpheuszero.github.io/EmpyrionManagementSuite/",
 	"Changelog": [
 					"* Modified update logic to run in the background.",
 					"* Added whether or not a file should be installed or not."
@@ -26,54 +27,6 @@
 							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/EMS.DataModels.dll",
 							"RequiresUpdate": true,
 							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "GalaSoft.MvvmLight.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/GalaSoft.MvvmLight.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "GalaSoft.MvvmLight.Extras.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/GalaSoft.MvvmLight.Extras.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-												{
-							"FileName": "GalaSoft.MvvmLight.Platform.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/GalaSoft.MvvmLight.Platform.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "Microsoft.Practices.ServiceLocation.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/Microsoft.Practices.ServiceLocation.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "Newtonsoft.Json.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/Newtonsoft.Json.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "System.Windows.Interactivity.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/System.Windows.Interactivity.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "YamlDotNet.dll",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/YamlDotNet.dll",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#"
-						},
-						{
-							"FileName": "en-us.json",
-							"FileServerURL": "https://github.com/MorpheusZero/EmpyrionManagementSuite/raw/master/builds/1.0.1/en-us.json",
-							"RequiresUpdate": false,
-							"RelativeInstallPath": "#Localizations"
 						}
 				      ]
 
