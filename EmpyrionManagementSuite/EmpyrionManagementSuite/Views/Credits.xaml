@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Margin="100,0,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="creditsContainer" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Width="Auto" />
             </ScrollViewer>
         </Grid>

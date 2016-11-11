@@ -16,7 +16,7 @@ namespace EmpyrionManagementSuite.Views
     {
         public CreditsViewModel ViewModel
         {
-            get { return ((ViewModelLocator)Application.Current.Resources["Locator"]).Credits; }
+            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).Credits; }
         }
 
         public Credits()
@@ -29,16 +29,13 @@ namespace EmpyrionManagementSuite.Views
                 {
                     var credits = ViewModel.GetCreditsCollection();
 
-                    var panel = new StackPanel();
-                    panel.Margin = new Thickness(15);
-
                     foreach (var credit in credits.ToList())
                     {
                         var control = new UCCredit(credit);
-                        panel.Children.Add(control);
+                        control.VerticalAlignment = VerticalAlignment.Top;
+                        control.HorizontalAlignment = HorizontalAlignment.Center;
+                        creditsContainer.Children.Add(control);
                     }
-
-                    creditsContainer.Children.Add(panel);
                 }
                 catch (Exception ex)
                 {

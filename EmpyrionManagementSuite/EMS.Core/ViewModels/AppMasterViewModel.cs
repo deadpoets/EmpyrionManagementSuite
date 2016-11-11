@@ -22,7 +22,7 @@ namespace EMS.Core.ViewModels
 
             navService = NAVSERVICE;
 
-            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("APP_NAME");
+            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("APP_NAME");
 
             try
             {
@@ -79,7 +79,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                if (MessageBox.Show(((dynamic)Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic)Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show(((dynamic) Application.Current).GetLocalizationResourceValue("APP_CONFIRM_SHUTDOWN"), ((dynamic) Application.Current).GetLocalizationResourceValue("APP_QUIT"), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     Application.Current.Shutdown();
                 }
@@ -94,7 +94,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                ((dynamic)Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+                ((dynamic) Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
             }
             catch (Exception ex)
             {
@@ -119,7 +119,11 @@ namespace EMS.Core.ViewModels
                         break;
 
                     case "Home":
-                        ((dynamic)Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+                        ((dynamic) Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
+                        break;
+
+                    case "Credits":
+                        ((dynamic) Application.Current.MainWindow).SidebarMenu.ToggleVisiblity();
                         break;
                 }
             }
@@ -133,7 +137,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                ((dynamic)Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Collapsed;
+                ((dynamic) Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Collapsed;
             }
             catch (Exception ex)
             {
@@ -145,7 +149,7 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                ((dynamic)Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Visible;
+                ((dynamic) Application.Current.MainWindow).MenuToggle.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {

@@ -16,7 +16,7 @@ namespace EmpyrionManagementSuite
     {
         public AppMasterViewModel ViewModel
         {
-            get { return ((ViewModelLocator)Application.Current.Resources["Locator"]).AppMaster; }
+            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).AppMaster; }
         }
 
         public AppMaster()
@@ -39,11 +39,6 @@ namespace EmpyrionManagementSuite
         public SidebarMenu SidebarMenu
         {
             get { return SidebarMenuControl; }
-        }
-
-        public Image MenuToggle
-        {
-            get { return menuToggle; }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

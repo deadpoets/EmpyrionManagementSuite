@@ -21,7 +21,7 @@ namespace EmpyrionManagementSuite.UserControls
             Loaded += (s, f) =>
             {
                 this.DataContext = new SidebarMenuViewModel();
-                navService = ((dynamic)Application.Current.MainWindow).ViewModel.navService;
+                navService = ((dynamic) Application.Current.MainWindow).ViewModel.navService;
                 SidebarContainer.Visibility = Visibility.Collapsed;
             };
         }
@@ -55,28 +55,35 @@ namespace EmpyrionManagementSuite.UserControls
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var btn = (sender as Button);
-
-            switch (int.Parse(btn.CommandParameter.ToString()))
+            try
             {
-                case 0:
-                    navService.NavigateTo("home");
-                    ToggleVisiblity();
-                    break;
+                var btn = (sender as Button);
 
-                case 1:
-                    navService.NavigateTo("settings");
-                    ToggleVisiblity();
-                    break;
+                switch (int.Parse(btn.CommandParameter.ToString()))
+                {
+                    case 0:
+                        navService.NavigateTo("home");
+                        ToggleVisiblity();
+                        break;
 
-                case 2:
-                    navService.NavigateTo("credits");
-                    ToggleVisiblity();
-                    break;
+                    case 1:
+                        navService.NavigateTo("settings");
+                        ToggleVisiblity();
+                        break;
 
-                default:
-                    MessageBox.Show("ERROR");
-                    break;
+                    case 2:
+                        navService.NavigateTo("credits");
+                        ToggleVisiblity();
+                        break;
+
+                    default:
+                        MessageBox.Show("ERROR");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
             }
         }
     }
