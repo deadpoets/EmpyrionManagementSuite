@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EMS.Core.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace EmpyrionManagementSuite.Views
         public Settings()
         {
             InitializeComponent();
+
+            NotImplemented();
+        }
+
+        private void NotImplemented()
+        {
+            try
+            {
+                MessageBox.Show("This part is largely not implemented yet nor completely functional. If you wuld like to change the update check to false, please change it manually in the settings.json file in the EMS Installation Root Directory.");
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
         }
     }
 }

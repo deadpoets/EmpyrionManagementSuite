@@ -25,6 +25,38 @@ namespace EMS.Core.ViewModels
             }
         }
 
+        public string LanguageLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_LANGUAGE");
+            }
+        }
+
+        public string UsernameLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_USERNAME");
+            }
+        }
+
+        public string PasswordLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_PASSWORD");
+            }
+        }
+
+        public string UpdateChannelLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_UPDATE_CHANNEL");
+            }
+        }
+
         public string InstallationPath
         {
             get

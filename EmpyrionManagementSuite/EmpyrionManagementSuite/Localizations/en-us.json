@@ -78,6 +78,22 @@
         {
             "Key": "LABEL_UPDATE_CHECK",
             "Value": "Check For Updates?"
+        },
+        {
+            "Key": "LABEL_USERNAME",
+            "Value": "Steam Username"
+        },
+        {
+            "Key": "LABEL_Password",
+            "Value": "Steam Password"
+        },
+        {
+            "Key": "LABEL_LANGUAGE",
+            "Value": "Language"
+        },
+        {
+            "Key": "LABEL_UPDATE_CHANNEL",
+            "Value": "Update Channel"
         }
     ]
 }

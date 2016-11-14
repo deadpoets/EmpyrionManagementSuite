@@ -27,7 +27,31 @@
                 <!--// Update Checker //-->
                 <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                     <TextBlock Text="{Binding UpdateLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
-                    <CheckBox IsChecked="{Binding ShouldCheckForUpdates}" />
+                    <CheckBox IsEnabled="false" IsChecked="{Binding ShouldCheckForUpdates}" />
+                </StackPanel>
+
+                <!--// Language //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding LanguageLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <ComboBox IsEnabled="False" Width="250" />
+                </StackPanel>
+
+                <!--// Steam Username //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding UsernameLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <TextBox IsEnabled="False" Text="NOT IMPLEMENTED" Width="250" />
+                </StackPanel>
+
+                <!--// Steam Password //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding PasswordLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <TextBox IsEnabled="False" Text="NOT IMPLEMENTED" Width="250" />
+                </StackPanel>
+
+                <!--// Update Channel //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding UpdateChannelLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <TextBox IsEnabled="False" Text="master" Width="250" />
                 </StackPanel>
             </StackPanel>
         </Grid>
