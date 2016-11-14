@@ -21,7 +21,7 @@ namespace EmpyrionManagementSuite.UserControls
             Loaded += (s, f) =>
             {
                 this.DataContext = new SidebarMenuViewModel();
-                navService = ((dynamic) Application.Current.MainWindow).ViewModel.navService;
+                navService = ((dynamic)Application.Current.MainWindow).ViewModel.navService;
                 SidebarContainer.Visibility = Visibility.Collapsed;
             };
         }
@@ -73,6 +73,11 @@ namespace EmpyrionManagementSuite.UserControls
 
                     case 2:
                         navService.NavigateTo("credits");
+                        ToggleVisiblity();
+                        break;
+
+                    case 3:
+                        navService.NavigateTo("sectors");
                         ToggleVisiblity();
                         break;
 

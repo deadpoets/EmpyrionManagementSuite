@@ -21,6 +21,7 @@
                     <Button Content="{Binding HomeButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="0" Margin="0,0,0,5" />
                     <Button Content="{Binding SettingsButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="1" Margin="0,0,0,5" />
                     <Button Content="{Binding CreditsButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="2" Margin="0,0,0,5" />
+                    <Button Content="{Binding SectorsButton}" Style="{StaticResource PrimaryButton}" Click="Button_Click" CommandParameter="3" Margin="0,0,0,5" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>

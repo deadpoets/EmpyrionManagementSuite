@@ -27,6 +27,7 @@ namespace EmpyrionManagementSuite.ViewModel
             SimpleIoc.Default.Register<InstallViewModel>();
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<CreditsViewModel>();
+            SimpleIoc.Default.Register<SectorsViewModel>();
         }
 
         private static void SetupNavigation()
@@ -37,6 +38,7 @@ namespace EmpyrionManagementSuite.ViewModel
             navigationService.Configure("install", new Uri("../Views/Install.xaml", UriKind.Relative));
             navigationService.Configure("home", new Uri("../Views/Home.xaml", UriKind.Relative));
             navigationService.Configure("credits", new Uri("../Views/Credits.xaml", UriKind.Relative));
+            navigationService.Configure("sectors", new Uri("../Views/Sectors.xaml", UriKind.Relative));
 
             SimpleIoc.Default.Register<IFrameNavigationService>(() => navigationService);
         }
@@ -86,6 +88,14 @@ namespace EmpyrionManagementSuite.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<CreditsViewModel>();
+            }
+        }
+
+        public SectorsViewModel Sectors
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SectorsViewModel>();
             }
         }
 
