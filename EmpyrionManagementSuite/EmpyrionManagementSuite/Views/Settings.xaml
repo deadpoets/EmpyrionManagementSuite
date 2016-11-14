@@ -16,8 +16,19 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Style="{StaticResource HeaderOne}" Text="{Binding Name}" />
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0">
+
+                <!--// Game Installation Path //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding InstallationPathLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <TextBox IsEnabled="False" Text="{Binding InstallationPath}" Width="250" />
+                </StackPanel>
+
+                <!--// Update Checker //-->
+                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                    <TextBlock Text="{Binding UpdateLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
+                    <CheckBox IsChecked="{Binding ShouldCheckForUpdates}" />
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

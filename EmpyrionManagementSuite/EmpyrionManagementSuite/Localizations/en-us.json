@@ -1,79 +1,83 @@
 ﻿{
-  "LocalizationCode": "en-us",
-  "Name": "American English",
-  "Authors": [ "Dylan Legendre" ],
-  "Resources": [
-    {
-      "Key": "APP_NAME",
-      "Value": "Empyrion Management Suite"
-    },
-    {
-      "Key": "APP_LEAD_DEVELOPER",
-      "Value": "Dylan Legendre"
-    },
-    {
-      "Key": "APP_CLOSE",
-      "Value": "Close"
-    },
-    {
-      "Key": "APP_CONFIRM_SHUTDOWN",
-      "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
-    },
-    {
-      "Key": "APP_QUIT",
-      "Value": "Quit?"
-    },
-    {
-      "Key": "APP_MINIMIZE",
-      "Value": "Minimize"
-    },
-    {
-      "Key": "APP_YES",
-      "Value": "Yes"
-    },
-    {
-      "Key": "APP_NO",
-      "Value": "No"
-    },
-    {
-      "Key": "APP_OK",
-      "Value": "OK"
-    },
-    {
-      "Key": "APP_SUBMIT",
-      "Value": "Submit"
-    },
-    {
-      "Key": "STARTUP_LOADING",
-      "Value": "Please wait while EMS loads..."
-    },
-    {
-      "Key": "CONTROL_BUTTON_SETTINGS",
-      "Value": "Settings"
-    },
-    {
-      "Key": "CONTROL_BUTTON_HOME",
-      "Value": "Home"
-    },
-    {
-      "Key": "CONTROL_BUTTON_CREDITS",
-      "Value": "Credits"
-    },
-    {
-      "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
-      "Value": "Confirm Setup"
-    },
-    {
-      "Key": "LABEL_GAME_INSTALLATION_PATH",
-      "Value": "Empyrion Installation Path"
-    },
-    {
-      "Key": "SETUP_REQUIRES_INSTALL_PATH",
-      "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
-    },
-    {
-      "Key": "WELCOME_MESSAGE",
-      "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
-    }
-  ]
+    "LocalizationCode": "en-us",
+    "Name": "American English",
+    "Authors": [ "Dylan Legendre" ],
+    "Resources": [
+        {
+            "Key": "APP_NAME",
+            "Value": "Empyrion Management Suite"
+        },
+        {
+            "Key": "APP_LEAD_DEVELOPER",
+            "Value": "Dylan Legendre"
+        },
+        {
+            "Key": "APP_CLOSE",
+            "Value": "Close"
+        },
+        {
+            "Key": "APP_CONFIRM_SHUTDOWN",
+            "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
+        },
+        {
+            "Key": "APP_QUIT",
+            "Value": "Quit?"
+        },
+        {
+            "Key": "APP_MINIMIZE",
+            "Value": "Minimize"
+        },
+        {
+            "Key": "APP_YES",
+            "Value": "Yes"
+        },
+        {
+            "Key": "APP_NO",
+            "Value": "No"
+        },
+        {
+            "Key": "APP_OK",
+            "Value": "OK"
+        },
+        {
+            "Key": "APP_SUBMIT",
+            "Value": "Submit"
+        },
+        {
+            "Key": "STARTUP_LOADING",
+            "Value": "Please wait while EMS loads..."
+        },
+        {
+            "Key": "CONTROL_BUTTON_SETTINGS",
+            "Value": "Settings"
+        },
+        {
+            "Key": "CONTROL_BUTTON_HOME",
+            "Value": "Home"
+        },
+        {
+            "Key": "CONTROL_BUTTON_CREDITS",
+            "Value": "Credits"
+        },
+        {
+            "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
+            "Value": "Confirm Setup"
+        },
+        {
+            "Key": "LABEL_GAME_INSTALLATION_PATH",
+            "Value": "Empyrion Installation Path"
+        },
+        {
+            "Key": "SETUP_REQUIRES_INSTALL_PATH",
+            "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
+        },
+        {
+            "Key": "WELCOME_MESSAGE",
+            "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
+        },
+        {
+            "Key": "LABEL_UPDATE_CHECK",
+            "Value": "Check For Updates?"
+        }
+    ]
 }
