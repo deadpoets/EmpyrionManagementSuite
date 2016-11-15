@@ -47,6 +47,7 @@
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\ColorChange.cs" />
+    <Compile Include="Models\EMSSector.cs" />
     <Compile Include="Models\FixedResource.cs" />
     <Compile Include="Models\LocalEffect.cs" />
     <Compile Include="Models\LocalizationBase.cs" />

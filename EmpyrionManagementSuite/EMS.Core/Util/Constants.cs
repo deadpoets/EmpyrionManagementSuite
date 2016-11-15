@@ -10,6 +10,8 @@ namespace EMS.Core.Util
         public static string BASE_DIRECTORY = AppDomain.CurrentDomain.BaseDirectory;
         public static string APPSETTINGS_FILE = BASE_DIRECTORY + "settings.json";
         public static string LOGS_DIRECTORY = BASE_DIRECTORY + "logs";
+        public static string LIBRARIES_DIRECTORY = BASE_DIRECTORY + "libraries";
+        public static string LIBRARIES_SECTORS_FILE = LIBRARIES_DIRECTORY + "\\sectors.json";
         public static string LOGS_LOG_FILE = LOGS_DIRECTORY + "\\logs.json";
         public static string CREDITS_FILE = BASE_DIRECTORY + "credits.json";
         public static string LOCALIZATION_DIRECTORY = BASE_DIRECTORY + "Localizations";

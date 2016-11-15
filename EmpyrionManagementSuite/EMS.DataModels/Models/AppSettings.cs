@@ -9,5 +9,7 @@
         public string SteamUsername { get; set; }
         public string SteamPassword { get; set; }
         public string UpdateChannel { get; set; }
+        public string EMSEmailAddress { get; set; }
+        public string EMSPassword { get; set; }
     }
 }
