@@ -1,5 +1,7 @@
 ﻿using EMS.Core.Libraries;
 using EMS.Core.Navigation;
+using EMS.DataModels.Models;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -20,6 +22,14 @@ namespace EMS.Core.ViewModels
             get
             {
                 return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_SECTORS");
+            }
+        }
+
+        public List<EMSSector> SectorsList
+        {
+            get
+            {
+                return sManager.Sectors;
             }
         }
     }
