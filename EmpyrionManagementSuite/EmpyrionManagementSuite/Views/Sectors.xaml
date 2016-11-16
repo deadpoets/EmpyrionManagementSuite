@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       DataContext="{Binding Source={StaticResource Locator}, Path=Sectors}"
       xmlns:local="clr-namespace:EmpyrionManagementSuite.Views"
       mc:Ignorable="d"
@@ -24,6 +25,30 @@
             <!--// All Sectors //-->
             <Grid Grid.Row="0" Grid.Column="0">
                 <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                        <Image  Stretch="Fill" Height="16" Width="16" ToolTip="{Binding NewSectorTooltip}" Source="/EmpyrionManagementSuite;component/Assets/new-32.png">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding NewSector}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Image>
+                        <Image Margin="5,0,0,0" Stretch="Fill" Height="16" Width="16" ToolTip="{Binding DeleteSectorTooltip}" Source="/EmpyrionManagementSuite;component/Assets/delete-32.png">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding DeleteSector}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Image>
+                        <Image Margin="5,0,0,0" Stretch="Fill" Height="16" Width="16" ToolTip="{Binding CopySectorTooltip}" Source="/EmpyrionManagementSuite;component/Assets/copy-32.png">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding CopySector}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Image>
+                    </StackPanel>
+
                     <TextBlock Text="{Binding SectorsLabel}" Style="{StaticResource ControlLabel}" />
                     <ListBox ItemsSource="{Binding SectorsList}" Height="400" Width="205" />
                 </StackPanel>

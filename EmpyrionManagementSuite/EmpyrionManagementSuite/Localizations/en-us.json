@@ -106,6 +106,18 @@
         {
             "Key": "LABEL_SECTORS",
             "Value": "Sectors"
+        },
+        {
+            "Key": "TOOLTIP_NEW_SECTOR",
+            "Value": "Add New Sector"
+        },
+        {
+            "Key": "TOOLTIP_DELETE_SECTOR",
+            "Value": "Delete Sector"
+        },
+        {
+            "Key": "TOOLTIP_COPY_SECTOR",
+            "Value": "Copy Sector"
         }
     ]
 }
