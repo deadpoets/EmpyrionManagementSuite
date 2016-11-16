@@ -16,8 +16,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="215" />
-            <ColumnDefinition Width="215" />
+            <ColumnDefinition Width="225" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Margin="100,0,0,0">
@@ -50,7 +50,7 @@
                     </StackPanel>
 
                     <TextBlock Text="{Binding SectorsLabel}" Style="{StaticResource ControlLabel}" />
-                    <ListBox ItemsSource="{Binding SectorsList}" Height="400" Width="205" />
+                    <ListBox x:Name="lstSectors" FontSize="11" Foreground="{StaticResource AppThemeForeground}" Background="{StaticResource AppThemeBackgroundSecondary}" DisplayMemberPath="FriendlyName" SelectedValuePath="ID" Height="400" Width="215" />
                 </StackPanel>
             </Grid>
 

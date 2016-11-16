@@ -82,11 +82,12 @@ namespace EMS.Core.Libraries
 
                 File.WriteAllText(Constants.LIBRARIES_SECTORS_FILE, JsonConvert.SerializeObject((sectors.OrderBy(x => x.CreateDate).ToList()), Formatting.Indented));
 
-                UIUtil.Alert(SECTOR.FriendlyName + ResourceManager.GetResource("SECTOR_SAVED_SUCCESS"));
+                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_SUCCESS"));
             }
             catch (Exception ex)
             {
                 AppLogger.Exception(ex);
+                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_FAILED") + ex.Message);
             }
         }
 
@@ -107,6 +108,43 @@ namespace EMS.Core.Libraries
             catch (Exception ex)
             {
                 AppLogger.Exception(ex);
+                UIUtil.Alert(ResourceManager.GetResource("SECTOR_DELETED_FAIL") + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Creates a new sector based on an existing one.
+        /// </summary>
+        /// <param name="ID"></param>
+        public void CopySector(EMSSector SECTOR)
+        {
+            try
+            {
+                var sector = new EMSSector();
+                sector.ID = Guid.NewGuid();
+                sector.CreateDate = DateTime.UtcNow;
+                sector.FriendlyName = SECTOR.FriendlyName + "_COPY";
+                sector.AllowModifications = SECTOR.AllowModifications;
+                sector.Color = SECTOR.Color;
+                sector.Contributors = SECTOR.Contributors;
+                sector.Coordinates = SECTOR.Coordinates;
+                sector.Icon = SECTOR.Icon;
+                sector.IsSystemSector = false;
+                sector.LastUpdated = DateTime.UtcNow;
+                sector.Owner = SECTOR.Owner;
+                sector.Playfields = SECTOR.Playfields;
+                sector.URL = SECTOR.URL;
+
+                sectors.Add(sector);
+
+                File.WriteAllText(Constants.LIBRARIES_SECTORS_FILE, JsonConvert.SerializeObject((sectors.OrderBy(x => x.CreateDate).ToList()), Formatting.Indented));
+
+                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_SUCCESS"));
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_FAILED") + ex.Message);
             }
         }
     }

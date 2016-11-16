@@ -1,123 +1,143 @@
 ﻿{
-    "LocalizationCode": "en-us",
-    "Name": "American English",
-    "Authors": [ "Dylan Legendre" ],
-    "Resources": [
-        {
-            "Key": "APP_NAME",
-            "Value": "Empyrion Management Suite"
-        },
-        {
-            "Key": "APP_LEAD_DEVELOPER",
-            "Value": "Dylan Legendre"
-        },
-        {
-            "Key": "APP_CLOSE",
-            "Value": "Close"
-        },
-        {
-            "Key": "APP_CONFIRM_SHUTDOWN",
-            "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
-        },
-        {
-            "Key": "APP_QUIT",
-            "Value": "Quit?"
-        },
-        {
-            "Key": "APP_MINIMIZE",
-            "Value": "Minimize"
-        },
-        {
-            "Key": "APP_YES",
-            "Value": "Yes"
-        },
-        {
-            "Key": "APP_NO",
-            "Value": "No"
-        },
-        {
-            "Key": "APP_OK",
-            "Value": "OK"
-        },
-        {
-            "Key": "APP_SUBMIT",
-            "Value": "Submit"
-        },
-        {
-            "Key": "ALERT_NO_SECTORS_EXIST",
-            "Value": "No sectors exist in the system. You can create one by pressing the button above!"
-        },
-        {
-            "Key": "STARTUP_LOADING",
-            "Value": "Please wait while EMS loads..."
-        },
-        {
-            "Key": "CONTROL_BUTTON_SETTINGS",
-            "Value": "Settings"
-        },
-        {
-            "Key": "CONTROL_BUTTON_HOME",
-            "Value": "Home"
-        },
-        {
-            "Key": "CONTROL_BUTTON_CREDITS",
-            "Value": "Credits"
-        },
-        {
-            "Key": "CONTROL_BUTTON_SECTORS",
-            "Value": "Sectors"
-        },
-        {
-            "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
-            "Value": "Confirm Setup"
-        },
-        {
-            "Key": "LABEL_GAME_INSTALLATION_PATH",
-            "Value": "Empyrion Installation Path"
-        },
-        {
-            "Key": "SETUP_REQUIRES_INSTALL_PATH",
-            "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
-        },
-        {
-            "Key": "WELCOME_MESSAGE",
-            "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
-        },
-        {
-            "Key": "LABEL_UPDATE_CHECK",
-            "Value": "Check For Updates?"
-        },
-        {
-            "Key": "LABEL_USERNAME",
-            "Value": "Steam Username"
-        },
-        {
-            "Key": "LABEL_PASSWORD",
-            "Value": "Steam Password"
-        },
-        {
-            "Key": "LABEL_LANGUAGE",
-            "Value": "Language"
-        },
-        {
-            "Key": "LABEL_UPDATE_CHANNEL",
-            "Value": "Update Channel"
-        },
-        {
-            "Key": "LABEL_SECTORS",
-            "Value": "Sectors"
-        },
-        {
-            "Key": "TOOLTIP_NEW_SECTOR",
-            "Value": "Add New Sector"
-        },
-        {
-            "Key": "TOOLTIP_DELETE_SECTOR",
-            "Value": "Delete Sector"
-        },
-        {
-            "Key": "TOOLTIP_COPY_SECTOR",
-            "Value": "Copy Sector"
-        }
-    ]
+  "LocalizationCode": "en-us",
+  "Name": "American English",
+  "Authors": [ "MorpheusZero" ],
+  "Resources": [
+    {
+      "Key": "APP_NAME",
+      "Value": "Empyrion Management Suite"
+    },
+    {
+      "Key": "APP_LEAD_DEVELOPER",
+      "Value": "Dylan Legendre"
+    },
+    {
+      "Key": "APP_CLOSE",
+      "Value": "Close"
+    },
+    {
+      "Key": "APP_CONFIRM_SHUTDOWN",
+      "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
+    },
+    {
+      "Key": "APP_QUIT",
+      "Value": "Quit?"
+    },
+    {
+      "Key": "APP_MINIMIZE",
+      "Value": "Minimize"
+    },
+    {
+      "Key": "APP_YES",
+      "Value": "Yes"
+    },
+    {
+      "Key": "APP_NO",
+      "Value": "No"
+    },
+    {
+      "Key": "APP_OK",
+      "Value": "OK"
+    },
+    {
+      "Key": "APP_SUBMIT",
+      "Value": "Submit"
+    },
+    {
+      "Key": "ALERT_NO_SECTORS_EXIST",
+      "Value": "No sectors exist in the system. You can create one by pressing the button above!"
+    },
+    {
+      "Key": "STARTUP_LOADING",
+      "Value": "Please wait while EMS loads..."
+    },
+    {
+      "Key": "CONTROL_BUTTON_SETTINGS",
+      "Value": "Settings"
+    },
+    {
+      "Key": "CONTROL_BUTTON_HOME",
+      "Value": "Home"
+    },
+    {
+      "Key": "CONTROL_BUTTON_CREDITS",
+      "Value": "Credits"
+    },
+    {
+      "Key": "CONTROL_BUTTON_SECTORS",
+      "Value": "Sectors"
+    },
+    {
+      "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
+      "Value": "Confirm Setup"
+    },
+    {
+      "Key": "LABEL_GAME_INSTALLATION_PATH",
+      "Value": "Empyrion Installation Path"
+    },
+    {
+      "Key": "SETUP_REQUIRES_INSTALL_PATH",
+      "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
+    },
+    {
+      "Key": "LISTBOX_SELECT_REQUIRED",
+      "Value": "You must select an item from the list to proceed!"
+    },
+    {
+      "Key": "WELCOME_MESSAGE",
+      "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
+    },
+    {
+      "Key": "LABEL_UPDATE_CHECK",
+      "Value": "Check For Updates?"
+    },
+    {
+      "Key": "LABEL_USERNAME",
+      "Value": "Steam Username"
+    },
+    {
+      "Key": "LABEL_PASSWORD",
+      "Value": "Steam Password"
+    },
+    {
+      "Key": "LABEL_LANGUAGE",
+      "Value": "Language"
+    },
+    {
+      "Key": "LABEL_UPDATE_CHANNEL",
+      "Value": "Update Channel"
+    },
+    {
+      "Key": "LABEL_SECTORS",
+      "Value": "Sectors"
+    },
+    {
+      "Key": "TOOLTIP_NEW_SECTOR",
+      "Value": "Add New Sector"
+    },
+    {
+      "Key": "TOOLTIP_DELETE_SECTOR",
+      "Value": "Delete Sector"
+    },
+    {
+      "Key": "TOOLTIP_COPY_SECTOR",
+      "Value": "Copy Sector"
+    },
+    {
+      "Key": "SECTOR_SAVED_SUCCESS",
+      "Value": "Sector was saved successfully!"
+    },
+    {
+      "Key": "SECTOR_SAVED_FAIL",
+      "Value": "An error occured when attempting to save the sector! "
+    },
+    {
+      "Key": "SECTOR_DELETED_SUCCESS",
+      "Value": " was deleted successfully!"
+    },
+    {
+      "Key": "SECTOR_DELETED_FAIL",
+      "Value": "An error occured when attempting to delete the sector! "
+    }
+  ]
 }

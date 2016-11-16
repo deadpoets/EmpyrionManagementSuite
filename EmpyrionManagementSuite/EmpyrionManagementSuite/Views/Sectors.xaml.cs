@@ -1,4 +1,5 @@
 ﻿using EmpyrionManagementSuite.ViewModel;
+using EMS.Core.Util;
 using EMS.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,21 @@ namespace EmpyrionManagementSuite.Views
         public Sectors()
         {
             InitializeComponent();
+
+            Loaded += (s, f) =>
+              {
+                  try
+                  {
+                      ViewModel.SectorsListBox = lstSectors;
+                      ViewModel.SectorsListBox.SelectionChanged += ViewModel.SectorsListBox_SelectionChanged;
+
+                      ViewModel.RebindSectors();
+                  }
+                  catch (Exception ex)
+                  {
+                      AppLogger.Exception(ex);
+                  }
+              };
         }
     }
 }
