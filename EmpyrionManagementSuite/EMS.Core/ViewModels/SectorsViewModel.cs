@@ -19,6 +19,31 @@ namespace EMS.Core.ViewModels
         public RelayCommand CopySector { get; set; }
         public ListBox SectorsListBox { get; set; }
 
+        //ID
+        private string inputID;
+
+        public string InputID { get { return inputID; } set { RaisePropertyChanged("InputID"); inputID = value; } }
+
+        //FriendlyName
+        private string inputFriendlyName;
+
+        public string InputFriendlyName { get { return inputFriendlyName; } set { RaisePropertyChanged("InputFriendlyName"); inputFriendlyName = value; } }
+
+        //Owner
+        private string inputOwner;
+
+        public string InputOwner { get { return inputOwner; } set { RaisePropertyChanged("InputOwner"); inputOwner = value; } }
+
+        //CreateDate
+        private string inputCreateDate;
+
+        public string InputCreateDate { get { return inputCreateDate; } set { RaisePropertyChanged("InputCreateDate"); inputCreateDate = value; } }
+
+        //LastEditDate
+        private string inputLastEditDate;
+
+        public string InputLastEditDate { get { return inputLastEditDate; } set { RaisePropertyChanged("InputLastEditDate"); inputLastEditDate = value; } }
+
         public SectorsViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
@@ -32,6 +57,46 @@ namespace EMS.Core.ViewModels
             get
             {
                 return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_SECTORS");
+            }
+        }
+
+        public string IDLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_ID");
+            }
+        }
+
+        public string FriendlyNameLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_FRIENDLY_NAME");
+            }
+        }
+
+        public string OwnerLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_OWNER");
+            }
+        }
+
+        public string CreateDateLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_CREATE_DATE");
+            }
+        }
+
+        public string LastEditDateLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_LAST_EDIT_DATE");
             }
         }
 
@@ -109,7 +174,7 @@ namespace EMS.Core.ViewModels
             {
                 var sector = (sender as ListBox).SelectedItem as EMSSector;
 
-                UIUtil.Alert(sector.ID.ToString());
+                WriteDetails(sector);
             }
             catch (Exception ex)
             {
@@ -125,6 +190,7 @@ namespace EMS.Core.ViewModels
                 sector.ID = Guid.NewGuid();
                 sector.IsSystemSector = false;
                 sector.CreateDate = DateTime.UtcNow;
+                sector.LastUpdated = DateTime.UtcNow;
                 sector.FriendlyName = "Morph3us_0";
 
                 sManager.SaveSector(sector);
@@ -176,6 +242,22 @@ namespace EMS.Core.ViewModels
                 {
                     UIUtil.Alert(ResourceManager.GetResource("LISTBOX_SELECT_REQUIRED"));
                 }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void WriteDetails(EMSSector SECTOR)
+        {
+            try
+            {
+                InputID = SECTOR.ID.ToString().ToUpper();
+                InputFriendlyName = SECTOR.FriendlyName;
+                InputOwner = SECTOR.Owner;
+                InputCreateDate = SECTOR.CreateDate.ToString();
+                InputLastEditDate = SECTOR.LastUpdated.ToString();
             }
             catch (Exception ex)
             {

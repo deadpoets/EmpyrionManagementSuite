@@ -112,6 +112,26 @@
       "Value": "Sectors"
     },
     {
+      "Key": "LABEL_ID",
+      "Value": "ID"
+    },
+    {
+      "Key": "LABEL_FRIENDLY_NAME",
+      "Value": "Friendly Name"
+    },
+    {
+      "Key": "LABEL_OWNER",
+      "Value": "Owner"
+    },
+    {
+      "Key": "LABEL_CREATE_DATE",
+      "Value": "Create Date"
+    },
+    {
+      "Key": "LABEL_LAST_EDIT_DATE",
+      "Value": "Last Edit Date"
+    },
+    {
       "Key": "TOOLTIP_NEW_SECTOR",
       "Value": "Add New Sector"
     },
@@ -133,7 +153,7 @@
     },
     {
       "Key": "SECTOR_DELETED_SUCCESS",
-      "Value": " was deleted successfully!"
+      "Value": "Sector was deleted successfully!"
     },
     {
       "Key": "SECTOR_DELETED_FAIL",
