@@ -86,6 +86,12 @@
                         <TextBlock Width="125" Text="{Binding LastEditDateLabel}" Style="{StaticResource ControlLabel}" />
                         <TextBox Width="250" IsEnabled="False" Margin="0,2,0,0" Text="{Binding InputLastEditDate}" />
                     </StackPanel>
+
+                    <!--// Contributors //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
+                        <TextBlock Width="125" Text="{Binding ContributorsLabel}" Style="{StaticResource ControlLabel}" />
+                        <TextBox Width="250" IsEnabled="False" Margin="0,2,0,0" Text="{Binding InputContributors}" />
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </Grid>

@@ -132,6 +132,10 @@
       "Value": "Last Edit Date"
     },
     {
+      "Key": "LABEL_CONTRIBUTORS",
+      "Value": "Contributors"
+    },
+    {
       "Key": "TOOLTIP_NEW_SECTOR",
       "Value": "Add New Sector"
     },

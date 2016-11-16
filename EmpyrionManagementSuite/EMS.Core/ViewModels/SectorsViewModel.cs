@@ -5,6 +5,7 @@ using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -43,6 +44,11 @@ namespace EMS.Core.ViewModels
         private string inputLastEditDate;
 
         public string InputLastEditDate { get { return inputLastEditDate; } set { RaisePropertyChanged("InputLastEditDate"); inputLastEditDate = value; } }
+
+        //Contributors
+        private string inputContributors;
+
+        public string InputContributors { get { return inputContributors; } set { RaisePropertyChanged("InputContributors"); inputContributors = value; } }
 
         public SectorsViewModel(IFrameNavigationService NAVSERVICE)
         {
@@ -97,6 +103,14 @@ namespace EMS.Core.ViewModels
             get
             {
                 return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_LAST_EDIT_DATE");
+            }
+        }
+
+        public string ContributorsLabel
+        {
+            get
+            {
+                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_CONTRIBUTORS");
             }
         }
 
@@ -258,6 +272,7 @@ namespace EMS.Core.ViewModels
                 InputOwner = SECTOR.Owner;
                 InputCreateDate = SECTOR.CreateDate.ToString();
                 InputLastEditDate = SECTOR.LastUpdated.ToString();
+                InputContributors = string.Join("|", SECTOR.Contributors.ToArray());
             }
             catch (Exception ex)
             {
