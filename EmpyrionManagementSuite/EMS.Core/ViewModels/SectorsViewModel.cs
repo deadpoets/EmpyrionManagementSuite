@@ -5,7 +5,6 @@ using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -23,32 +22,52 @@ namespace EMS.Core.ViewModels
         //ID
         private string inputID;
 
-        public string InputID { get { return inputID; } set { RaisePropertyChanged("InputID"); inputID = value; } }
+        public string InputID { get { return inputID; } set { inputID = value; RaisePropertyChanged("InputID"); } }
 
         //FriendlyName
         private string inputFriendlyName;
 
-        public string InputFriendlyName { get { return inputFriendlyName; } set { RaisePropertyChanged("InputFriendlyName"); inputFriendlyName = value; } }
+        public string InputFriendlyName { get { return inputFriendlyName; } set { inputFriendlyName = value; RaisePropertyChanged("InputFriendlyName"); } }
 
         //Owner
         private string inputOwner;
 
-        public string InputOwner { get { return inputOwner; } set { RaisePropertyChanged("InputOwner"); inputOwner = value; } }
+        public string InputOwner { get { return inputOwner; } set { inputOwner = value; RaisePropertyChanged("InputOwner"); } }
 
         //CreateDate
         private string inputCreateDate;
 
-        public string InputCreateDate { get { return inputCreateDate; } set { RaisePropertyChanged("InputCreateDate"); inputCreateDate = value; } }
+        public string InputCreateDate { get { return inputCreateDate; } set { inputCreateDate = value; RaisePropertyChanged("InputCreateDate"); } }
 
         //LastEditDate
         private string inputLastEditDate;
 
-        public string InputLastEditDate { get { return inputLastEditDate; } set { RaisePropertyChanged("InputLastEditDate"); inputLastEditDate = value; } }
+        public string InputLastEditDate { get { return inputLastEditDate; } set { inputLastEditDate = value; RaisePropertyChanged("InputLastEditDate"); } }
 
         //Contributors
         private string inputContributors;
 
-        public string InputContributors { get { return inputContributors; } set { RaisePropertyChanged("InputContributors"); inputContributors = value; } }
+        public string InputContributors { get { return inputContributors; } set { inputContributors = value; RaisePropertyChanged("InputContributors"); } }
+
+        //URL
+        private string inputURL;
+
+        public string InputURL { get { return inputURL; } set { inputURL = value; RaisePropertyChanged("InputURL"); } }
+
+        //Coordinates
+        private string inputCoordinates;
+
+        public string InputCoordinates { get { return inputCoordinates; } set { inputCoordinates = value; RaisePropertyChanged("InputCoordinates"); } }
+
+        //Color
+        private string inputColor;
+
+        public string InputColor { get { return inputColor; } set { inputColor = value; RaisePropertyChanged("InputColor"); } }
+
+        //Icon
+        private string inputIcon;
+
+        public string InputIcon { get { return inputIcon; } set { inputIcon = value; RaisePropertyChanged("InputIcon"); } }
 
         public SectorsViewModel(IFrameNavigationService NAVSERVICE)
         {
@@ -62,7 +81,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_SECTORS");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_SECTORS");
             }
         }
 
@@ -70,7 +89,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_ID");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_ID");
             }
         }
 
@@ -78,7 +97,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_FRIENDLY_NAME");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_FRIENDLY_NAME");
             }
         }
 
@@ -86,7 +105,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_OWNER");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_OWNER");
             }
         }
 
@@ -94,7 +113,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_CREATE_DATE");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_CREATE_DATE");
             }
         }
 
@@ -102,7 +121,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_LAST_EDIT_DATE");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_LAST_EDIT_DATE");
             }
         }
 
@@ -110,7 +129,39 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_CONTRIBUTORS");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_CONTRIBUTORS");
+            }
+        }
+
+        public string URLLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_URL");
+            }
+        }
+
+        public string CoordinatesLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_COORDINATES");
+            }
+        }
+
+        public string ColorLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_COLOR");
+            }
+        }
+
+        public string IconLabel
+        {
+            get
+            {
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_ICON");
             }
         }
 
@@ -118,7 +169,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("TOOLTIP_NEW_SECTOR");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_NEW_SECTOR");
             }
         }
 
@@ -126,7 +177,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("TOOLTIP_DELETE_SECTOR");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_DELETE_SECTOR");
             }
         }
 
@@ -134,7 +185,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("TOOLTIP_COPY_SECTOR");
+                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_COPY_SECTOR");
             }
         }
 
@@ -273,6 +324,9 @@ namespace EMS.Core.ViewModels
                 InputCreateDate = SECTOR.CreateDate.ToString();
                 InputLastEditDate = SECTOR.LastUpdated.ToString();
                 InputContributors = string.Join("|", SECTOR.Contributors.ToArray());
+                InputURL = SECTOR.URL;
+                InputCoordinates = string.Join("|", SECTOR.Coordinates.ToArray());
+                InputColor = SECTOR.Color;
             }
             catch (Exception ex)
             {

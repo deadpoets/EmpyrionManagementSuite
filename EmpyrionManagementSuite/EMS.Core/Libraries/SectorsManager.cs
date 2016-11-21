@@ -53,7 +53,7 @@ namespace EMS.Core.Libraries
                 }
                 else
                 {
-                    UIUtil.Alert(ResourceManager.GetResource("ALERT_NO_SECTORS_EXIST"));
+                    //UIUtil.Alert(ResourceManager.GetResource("ALERT_NO_SECTORS_EXIST"));
                     sectors = new List<EMSSector>();
                 }
             }

@@ -90,7 +90,31 @@
                     <!--// Contributors //-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
                         <TextBlock Width="125" Text="{Binding ContributorsLabel}" Style="{StaticResource ControlLabel}" />
-                        <TextBox Width="250" IsEnabled="False" Margin="0,2,0,0" Text="{Binding InputContributors}" />
+                        <TextBox Width="250" Margin="0,2,0,0" Text="{Binding InputContributors}" />
+                    </StackPanel>
+
+                    <!--// URL //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
+                        <TextBlock Width="125" Text="{Binding URLLabel}" Style="{StaticResource ControlLabel}" />
+                        <TextBox Width="250" Margin="0,2,0,0" Text="{Binding InputURL}" />
+                    </StackPanel>
+
+                    <!--// Coordinates //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
+                        <TextBlock Width="125" Text="{Binding CoordinatesLabel}" Style="{StaticResource ControlLabel}" />
+                        <TextBox Width="250" Margin="0,2,0,0" Text="{Binding InputCoordinates}" />
+                    </StackPanel>
+
+                    <!--// Color //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
+                        <TextBlock Width="125" Text="{Binding ColorLabel}" Style="{StaticResource ControlLabel}" />
+                        <TextBox Width="250" Margin="0,2,0,0" Text="{Binding InputColor}" />
+                    </StackPanel>
+
+                    <!--// Icon //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
+                        <TextBlock Width="125" Text="{Binding IconLabel}" Style="{StaticResource ControlLabel}" />
+                        <TextBox Width="250" Margin="0,2,0,0" Text="{Binding InputIcon}" />
                     </StackPanel>
                 </StackPanel>
             </Border>
