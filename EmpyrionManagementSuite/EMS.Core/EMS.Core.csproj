@@ -95,6 +95,7 @@
     <Compile Include="ViewModels\CreditsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\InstallViewModel.cs" />
+    <Compile Include="ViewModels\PublishViewModel.cs" />
     <Compile Include="ViewModels\SectorsViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartupViewModel.cs" />

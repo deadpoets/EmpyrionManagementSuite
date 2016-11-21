@@ -81,6 +81,11 @@ namespace EmpyrionManagementSuite.UserControls
                         ToggleVisiblity();
                         break;
 
+                    case -1:
+                        navService.NavigateTo("publish");
+                        ToggleVisiblity();
+                        break;
+
                     default:
                         MessageBox.Show("ERROR");
                         break;

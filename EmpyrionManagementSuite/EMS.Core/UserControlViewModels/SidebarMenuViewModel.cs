@@ -38,5 +38,13 @@ namespace EMS.Core.UserControlViewModels
                 return ResourceManager.GetResource("CONTROL_BUTTON_SECTORS");
             }
         }
+
+        public string PublishButton
+        {
+            get
+            {
+                return ResourceManager.GetResource("CONTROL_BUTTON_PUBLISH");
+            }
+        }
     }
 }

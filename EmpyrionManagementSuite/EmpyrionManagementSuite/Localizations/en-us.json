@@ -72,6 +72,10 @@
       "Value": "Save"
     },
     {
+      "Key": "CONTROL_BUTTON_PUBLISH",
+      "Value": "Publish"
+    },
+    {
       "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
       "Value": "Confirm Setup"
     },
@@ -154,6 +158,22 @@
     {
       "Key": "LABEL_ICON",
       "Value": "Icon"
+    },
+    {
+      "Key": "LABEL_SINGLE_PLAYER",
+      "Value": "Single Player"
+    },
+    {
+      "Key": "LABEL_MULTI_PLAYER",
+      "Value": "Multiplayer"
+    },
+    {
+      "Key": "LABEL_ENVIRONMENT",
+      "Value": "Environment"
+    },
+    {
+      "Key": "LABEL_ENVIRONMENT_HELP_TEXT",
+      "Value": "Please choose an environment that you would like to publish the configuration to. Please note that the current implementation only supports a single player installation. Multiplayer and dedicated server support is coming soon!"
     },
     {
       "Key": "LABEL_PLAYFIELDS",

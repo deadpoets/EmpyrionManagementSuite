@@ -1,0 +1,39 @@
+﻿<Page x:Class="EmpyrionManagementSuite.Views.Publish"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Publish}"
+      xmlns:local="clr-namespace:EmpyrionManagementSuite.Views"
+      mc:Ignorable="d"
+      d:DesignHeight="590"
+      d:DesignWidth="800"
+      Title="Publish">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="100,0,0,0">
+            <StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <TabControl Width="620" Height="500" Foreground="{StaticResource AppThemeForeground}" Background="{StaticResource AppThemeBackground}">
+                    <!--// 1. ENVIRONMENT //-->
+                    <TabItem Header="{Binding EnvironmentLabel}" TabIndex="0">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                            <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding EnvironmentHelpText}" Style="{StaticResource ParagraphText}" />
+
+                            <RadioButton IsChecked="True" CommandParameter="-1" GroupName="Environment">
+                                <TextBlock Text="{Binding SinglePlayerLabel}" Style="{StaticResource ParagraphText}" />
+                            </RadioButton>
+                            <RadioButton IsEnabled="False" CommandParameter="0" GroupName="Environment">
+                                <TextBlock Text="{Binding MPLabel}" Style="{StaticResource ParagraphText}" />
+                            </RadioButton>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
