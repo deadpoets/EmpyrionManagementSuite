@@ -120,7 +120,12 @@
                     <!--// Playfields //-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5,0,0">
                         <TextBlock Width="125" Text="{Binding PlayfieldsLabel}" Style="{StaticResource ControlLabel}" />
-                        <TextBox Width="250" TextWrapping="Wrap" Height="100" Margin="0,2,0,0" Text="{Binding PlayfieldsIcon}" />
+                        <TextBox Width="250" TextWrapping="Wrap" Height="100" Margin="0,2,0,0" Text="{Binding InputPlayfields}" />
+                    </StackPanel>
+
+                    <!--// SAVE //-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <Button Width="75" Height="35" Style="{StaticResource PrimaryButton}" Content="{Binding SaveButton}" />
                     </StackPanel>
                 </StackPanel>
             </Border>

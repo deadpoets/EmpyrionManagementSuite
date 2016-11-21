@@ -5,7 +5,6 @@ using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace EMS.Core.ViewModels
@@ -18,6 +17,15 @@ namespace EMS.Core.ViewModels
         public RelayCommand DeleteSector { get; set; }
         public RelayCommand CopySector { get; set; }
         public ListBox SectorsListBox { get; set; }
+
+        //SaveButton
+        public string SaveButton
+        {
+            get
+            {
+                return ResourceManager.GetResource("CONTROL_BUTTON_SAVE");
+            }
+        }
 
         //ID
         private string inputID;
@@ -68,6 +76,11 @@ namespace EMS.Core.ViewModels
         private string inputIcon;
 
         public string InputIcon { get { return inputIcon; } set { inputIcon = value; RaisePropertyChanged("InputIcon"); } }
+
+        //Playfields
+        private string inputPlayfields;
+
+        public string InputPlayfields { get { return inputPlayfields; } set { inputPlayfields = value; RaisePropertyChanged("InputPlayfields"); } }
 
         public SectorsViewModel(IFrameNavigationService NAVSERVICE)
         {
@@ -264,7 +277,8 @@ namespace EMS.Core.ViewModels
                 sector.IsSystemSector = false;
                 sector.CreateDate = DateTime.UtcNow;
                 sector.LastUpdated = DateTime.UtcNow;
-                sector.FriendlyName = "Morph3us_0";
+                sector.FriendlyName = "M0rph3u$_0";
+                sector.Owner = "MZ";
 
                 sManager.SaveSector(sector);
 
@@ -331,10 +345,21 @@ namespace EMS.Core.ViewModels
                 InputOwner = SECTOR.Owner;
                 InputCreateDate = SECTOR.CreateDate.ToString();
                 InputLastEditDate = SECTOR.LastUpdated.ToString();
-                InputContributors = string.Join("|", SECTOR.Contributors.ToArray());
+                InputContributors = string.Join("|", SECTOR.Contributors != null ? SECTOR.Contributors.ToArray() : new string[1]);
                 InputURL = SECTOR.URL;
-                InputCoordinates = string.Join("|", SECTOR.Coordinates.ToArray());
+                InputCoordinates = string.Join("|", SECTOR.Coordinates != null ? SECTOR.Coordinates.ToArray() : new string[1]);
                 InputColor = SECTOR.Color;
+                InputIcon = SECTOR.Icon;
+
+                InputPlayfields = "";
+
+                if (SECTOR.Playfields != null)
+                {
+                    foreach (var itm in SECTOR.Playfields)
+                    {
+                        InputPlayfields += string.Join("|", itm != null ? itm.ToArray() : new string[1]) + Environment.NewLine;
+                    }
+                }
             }
             catch (Exception ex)
             {

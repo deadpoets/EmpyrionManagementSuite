@@ -16,7 +16,7 @@ namespace EmpyrionManagementSuite
     {
         public AppMasterViewModel ViewModel
         {
-            get { return ((ViewModelLocator) Application.Current.Resources["Locator"]).AppMaster; }
+            get { return ((ViewModelLocator)Application.Current.Resources["Locator"]).AppMaster; }
         }
 
         public AppMaster()
@@ -41,6 +41,12 @@ namespace EmpyrionManagementSuite
             get { return SidebarMenuControl; }
         }
 
+        public Image MenuToggle
+        {
+            get { return menuToggle; }
+            set { menuToggle = value; }
+        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -52,7 +58,10 @@ namespace EmpyrionManagementSuite
             }
             catch (Exception ex)
             {
-                AppLogger.Exception(ex);
+                //TODO: this error happens if you CANCEL a shutdown and
+                //IDK how to fix it. It clutters the log so Im repressing
+                //the actual error because it doesnt' affect anything negatively.
+                Console.WriteLine(ex.Message);
             }
         }
 

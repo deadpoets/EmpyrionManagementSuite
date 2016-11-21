@@ -77,6 +77,8 @@ namespace EMS.Core.Util
                 log.Type = "EXCEPTION";
 
                 WriteLog(log);
+
+                UIUtil.Alert(EX.Message + Environment.NewLine + Environment.NewLine + EX.StackTrace);
             }
             catch (Exception ex)
             {

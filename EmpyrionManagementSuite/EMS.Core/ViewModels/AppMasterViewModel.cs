@@ -17,9 +17,6 @@ namespace EMS.Core.ViewModels
 
         public AppMasterViewModel(IFrameNavigationService NAVSERVICE)
         {
-            // Hide the menu toggle on first load
-            HideMenuToggle();
-
             navService = NAVSERVICE;
 
             Name = ResourceManager.GetResource("APP_NAME");

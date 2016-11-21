@@ -68,6 +68,10 @@
       "Value": "Sectors"
     },
     {
+      "Key": "CONTROL_BUTTON_SAVE",
+      "Value": "Save"
+    },
+    {
       "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
       "Value": "Confirm Setup"
     },
