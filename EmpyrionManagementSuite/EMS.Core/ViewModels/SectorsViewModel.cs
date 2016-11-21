@@ -5,6 +5,7 @@ using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace EMS.Core.ViewModels
@@ -16,6 +17,7 @@ namespace EMS.Core.ViewModels
         public RelayCommand NewSector { get; set; }
         public RelayCommand DeleteSector { get; set; }
         public RelayCommand CopySector { get; set; }
+        public RelayCommand SaveSector { get; set; }
         public ListBox SectorsListBox { get; set; }
 
         //SaveButton
@@ -247,6 +249,7 @@ namespace EMS.Core.ViewModels
                 NewSector = new RelayCommand(AddNewSector);
                 DeleteSector = new RelayCommand(DeleteExistingSector);
                 CopySector = new RelayCommand(CopyExistingSector);
+                SaveSector = new RelayCommand(UpdateSector);
             }
             catch (Exception ex)
             {
@@ -283,6 +286,52 @@ namespace EMS.Core.ViewModels
                 sManager.SaveSector(sector);
 
                 RebindSectors();
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void UpdateSector()
+        {
+            try
+            {
+                if (SectorsListBox.SelectedItems.Count != 0)
+                {
+                    var sector = SectorsListBox.SelectedItem as EMSSector;
+
+                    sector.LastUpdated = DateTime.UtcNow;
+                    sector.Color = InputColor;
+                    sector.Contributors = InputContributors.Split('|').ToList();
+                    sector.Coordinates = InputCoordinates.Split('|').ToList();
+                    sector.FriendlyName = InputFriendlyName;
+                    sector.Icon = InputIcon;
+                    sector.URL = InputURL;
+                    sector.Playfields.Clear();
+
+                    var lines = InputPlayfields.Split(new string[] { Environment.NewLine }, StringSplitOptions.None).ToList();
+
+                    if (lines != null)
+                    {
+                        foreach (var line in lines)
+                        {
+                            if (!string.IsNullOrEmpty(line))
+                            {
+                                var itm = line.Split('|').ToList();
+                                sector.Playfields.Add(itm);
+                            }
+                        }
+                    }
+
+                    sManager.SaveSector(sector);
+
+                    RebindSectors();
+                }
+                else
+                {
+                    UIUtil.Alert(ResourceManager.GetResource("LISTBOX_SELECT_REQUIRED"));
+                }
             }
             catch (Exception ex)
             {
@@ -340,24 +389,27 @@ namespace EMS.Core.ViewModels
         {
             try
             {
-                InputID = SECTOR.ID.ToString().ToUpper();
-                InputFriendlyName = SECTOR.FriendlyName;
-                InputOwner = SECTOR.Owner;
-                InputCreateDate = SECTOR.CreateDate.ToString();
-                InputLastEditDate = SECTOR.LastUpdated.ToString();
-                InputContributors = string.Join("|", SECTOR.Contributors != null ? SECTOR.Contributors.ToArray() : new string[1]);
-                InputURL = SECTOR.URL;
-                InputCoordinates = string.Join("|", SECTOR.Coordinates != null ? SECTOR.Coordinates.ToArray() : new string[1]);
-                InputColor = SECTOR.Color;
-                InputIcon = SECTOR.Icon;
-
-                InputPlayfields = "";
-
-                if (SECTOR.Playfields != null)
+                if (SECTOR != null)
                 {
-                    foreach (var itm in SECTOR.Playfields)
+                    InputID = SECTOR.ID.ToString().ToUpper();
+                    InputFriendlyName = SECTOR.FriendlyName;
+                    InputOwner = SECTOR.Owner;
+                    InputCreateDate = SECTOR.CreateDate.ToString();
+                    InputLastEditDate = SECTOR.LastUpdated.ToString();
+                    InputContributors = string.Join("|", SECTOR.Contributors != null ? SECTOR.Contributors.ToArray() : new string[1]);
+                    InputURL = SECTOR.URL;
+                    InputCoordinates = string.Join("|", SECTOR.Coordinates != null ? SECTOR.Coordinates.ToArray() : new string[1]);
+                    InputColor = SECTOR.Color;
+                    InputIcon = SECTOR.Icon;
+
+                    InputPlayfields = "";
+
+                    if (SECTOR.Playfields != null)
                     {
-                        InputPlayfields += string.Join("|", itm != null ? itm.ToArray() : new string[1]) + Environment.NewLine;
+                        foreach (var itm in SECTOR.Playfields)
+                        {
+                            InputPlayfields += string.Join("|", itm != null ? itm.ToArray() : new string[1]) + Environment.NewLine;
+                        }
                     }
                 }
             }
