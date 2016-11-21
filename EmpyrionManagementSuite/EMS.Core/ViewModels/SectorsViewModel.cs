@@ -81,7 +81,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_SECTORS");
+                return ResourceManager.GetResource("LABEL_SECTORS");
             }
         }
 
@@ -89,7 +89,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_ID");
+                return ResourceManager.GetResource("LABEL_ID");
             }
         }
 
@@ -97,7 +97,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_FRIENDLY_NAME");
+                return ResourceManager.GetResource("LABEL_FRIENDLY_NAME");
             }
         }
 
@@ -105,7 +105,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_OWNER");
+                return ResourceManager.GetResource("LABEL_OWNER");
             }
         }
 
@@ -113,7 +113,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_CREATE_DATE");
+                return ResourceManager.GetResource("LABEL_CREATE_DATE");
             }
         }
 
@@ -121,7 +121,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_LAST_EDIT_DATE");
+                return ResourceManager.GetResource("LABEL_LAST_EDIT_DATE");
             }
         }
 
@@ -129,7 +129,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_CONTRIBUTORS");
+                return ResourceManager.GetResource("LABEL_CONTRIBUTORS");
             }
         }
 
@@ -137,7 +137,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_URL");
+                return ResourceManager.GetResource("LABEL_URL");
             }
         }
 
@@ -145,7 +145,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_COORDINATES");
+                return ResourceManager.GetResource("LABEL_COORDINATES");
             }
         }
 
@@ -153,7 +153,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_COLOR");
+                return ResourceManager.GetResource("LABEL_COLOR");
             }
         }
 
@@ -161,7 +161,15 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_ICON");
+                return ResourceManager.GetResource("LABEL_ICON");
+            }
+        }
+
+        public string PlayfieldsLabel
+        {
+            get
+            {
+                return ResourceManager.GetResource("LABEL_PLAYFIELDS");
             }
         }
 
@@ -169,7 +177,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_NEW_SECTOR");
+                return ResourceManager.GetResource("TOOLTIP_NEW_SECTOR");
             }
         }
 
@@ -177,7 +185,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_DELETE_SECTOR");
+                return ResourceManager.GetResource("TOOLTIP_DELETE_SECTOR");
             }
         }
 
@@ -185,7 +193,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("TOOLTIP_COPY_SECTOR");
+                return ResourceManager.GetResource("TOOLTIP_COPY_SECTOR");
             }
         }
 

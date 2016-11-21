@@ -1,4 +1,5 @@
 ﻿using EMS.Core.Navigation;
+using EMS.Core.Util;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -13,7 +14,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_GAME_INSTALLATION_PATH");
+                return ResourceManager.GetResource("LABEL_GAME_INSTALLATION_PATH");
             }
         }
 
@@ -21,7 +22,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_UPDATE_CHECK");
+                return ResourceManager.GetResource("LABEL_UPDATE_CHECK");
             }
         }
 
@@ -29,7 +30,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_LANGUAGE");
+                return ResourceManager.GetResource("LABEL_LANGUAGE");
             }
         }
 
@@ -37,7 +38,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_USERNAME");
+                return ResourceManager.GetResource("LABEL_USERNAME");
             }
         }
 
@@ -45,7 +46,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_PASSWORD");
+                return ResourceManager.GetResource("LABEL_PASSWORD");
             }
         }
 
@@ -53,7 +54,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).GetLocalizationResourceValue("LABEL_UPDATE_CHANNEL");
+                return ResourceManager.GetResource("LABEL_UPDATE_CHANNEL");
             }
         }
 
@@ -61,7 +62,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic) Application.Current).Settings.GameInstallationPath;
+                return ((dynamic)Application.Current).Settings.GameInstallationPath;
             }
 
             set
@@ -86,8 +87,8 @@ namespace EMS.Core.ViewModels
         public SettingsViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = ((dynamic) Application.Current).GetLocalizationResourceValue("APP_NAME");
-            shouldCheckForUpdates = ((dynamic) Application.Current).Settings.CheckForUpdates;
+            Name = ResourceManager.GetResource("APP_NAME");
+            shouldCheckForUpdates = ((dynamic)Application.Current).Settings.CheckForUpdates;
         }
     }
 }

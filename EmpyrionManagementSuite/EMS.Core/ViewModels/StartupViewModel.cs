@@ -13,7 +13,7 @@ namespace EMS.Core.ViewModels
         public StartupViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
-            Name = ((dynamic)Application.Current).GetLocalizationResourceValue("STARTUP_LOADING");
+            Name = ResourceManager.GetResource("STARTUP_LOADING");
         }
 
         public void CheckForUpdates()

@@ -1,4 +1,4 @@
-﻿using System.Windows;
+﻿using EMS.Core.Util;
 
 namespace EMS.Core.UserControlViewModels
 {
@@ -11,7 +11,7 @@ namespace EMS.Core.UserControlViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_SETTINGS");
+                return ResourceManager.GetResource("CONTROL_BUTTON_SETTINGS");
             }
         }
 
@@ -19,7 +19,7 @@ namespace EMS.Core.UserControlViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_HOME");
+                return ResourceManager.GetResource("CONTROL_BUTTON_HOME");
             }
         }
 
@@ -27,7 +27,7 @@ namespace EMS.Core.UserControlViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_CREDITS");
+                return ResourceManager.GetResource("CONTROL_BUTTON_CREDITS");
             }
         }
 
@@ -35,7 +35,7 @@ namespace EMS.Core.UserControlViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_SECTORS");
+                return ResourceManager.GetResource("CONTROL_BUTTON_SECTORS");
             }
         }
     }

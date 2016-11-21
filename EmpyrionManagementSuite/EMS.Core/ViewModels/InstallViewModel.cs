@@ -18,7 +18,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("WELCOME_MESSAGE");
+                return ResourceManager.GetResource("WELCOME_MESSAGE");
             }
         }
 
@@ -26,7 +26,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("CONTROL_BUTTON_CONFIRM_SETUP");
+                return ResourceManager.GetResource("CONTROL_BUTTON_CONFIRM_SETUP");
             }
         }
 
@@ -34,7 +34,7 @@ namespace EMS.Core.ViewModels
         {
             get
             {
-                return ((dynamic)Application.Current).GetLocalizationResourceValue("LABEL_GAME_INSTALLATION_PATH");
+                return ResourceManager.GetResource("LABEL_GAME_INSTALLATION_PATH");
             }
         }
 
@@ -80,7 +80,7 @@ namespace EMS.Core.ViewModels
             {
                 if (string.IsNullOrEmpty(gamePathSource))
                 {
-                    MessageBox.Show(((dynamic)Application.Current).GetLocalizationResourceValue("SETUP_REQUIRES_INSTALL_PATH"));
+                    MessageBox.Show(ResourceManager.GetResource("SETUP_REQUIRES_INSTALL_PATH"));
                     return;
                 }
                 else
