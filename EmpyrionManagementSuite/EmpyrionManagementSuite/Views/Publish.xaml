@@ -22,14 +22,41 @@
                     <!--// 1. ENVIRONMENT //-->
                     <TabItem Header="{Binding EnvironmentLabel}" TabIndex="0">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
-                            <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding EnvironmentHelpText}" Style="{StaticResource ParagraphText}" />
+                            <Border BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
+                                <StackPanel Margin="0,0,0,5">
+                                    <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding EnvironmentHelpText}" Style="{StaticResource ParagraphText}" />
 
-                            <RadioButton IsChecked="True" CommandParameter="-1" GroupName="Environment">
-                                <TextBlock Text="{Binding SinglePlayerLabel}" Style="{StaticResource ParagraphText}" />
-                            </RadioButton>
-                            <RadioButton IsEnabled="False" CommandParameter="0" GroupName="Environment">
-                                <TextBlock Text="{Binding MPLabel}" Style="{StaticResource ParagraphText}" />
-                            </RadioButton>
+                                    <RadioButton IsChecked="True" CommandParameter="-1" GroupName="Environment">
+                                        <TextBlock Text="{Binding SinglePlayerLabel}" Style="{StaticResource ParagraphText}" />
+                                    </RadioButton>
+                                    <RadioButton IsEnabled="False" CommandParameter="0" GroupName="Environment">
+                                        <TextBlock Text="{Binding MPLabel}" Style="{StaticResource ParagraphText}" />
+                                    </RadioButton>
+                                </StackPanel>
+                            </Border>
+
+                            <Border BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
+                                <StackPanel Margin="0,0,0,5">
+                                    <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding LocationHelpText}" Style="{StaticResource ParagraphText}" />
+
+                                    <RadioButton IsChecked="True" CommandParameter="0" GroupName="Location">
+                                        <TextBlock Text="{Binding NewSaveLabel}" Style="{StaticResource ParagraphText}" />
+                                    </RadioButton>
+                                    <RadioButton CommandParameter="1" GroupName="Location">
+                                        <TextBlock Text="{Binding ExistingSaveLabel}" Style="{StaticResource ParagraphText}" />
+                                    </RadioButton>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </TabItem>
+
+                    <!--// 1. DETAILS //-->
+                    <TabItem Header="{Binding DetailsLabel}" TabIndex="1">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                            <Border Visibility="{Binding DetailsSinglePlayerVisiblity}" BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
+                                <StackPanel Margin="0,0,0,5">
+                                </StackPanel>
+                            </Border>
                         </StackPanel>
                     </TabItem>
                 </TabControl>

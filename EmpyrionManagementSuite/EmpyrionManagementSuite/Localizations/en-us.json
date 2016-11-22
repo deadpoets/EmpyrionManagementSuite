@@ -176,8 +176,24 @@
       "Value": "Please choose an environment that you would like to publish the configuration to. Please note that the current implementation only supports a single player installation. Multiplayer and dedicated server support is coming soon!"
     },
     {
+      "Key": "LABEL_LOCATION_HELP_TEXT",
+      "Value": "Choose where the publish will take place. Should we create a new save folder? Or will we be modifying an existing installation? Please note that modifying an existing save can cause data to be overwritten. You should always ensure you have a backup of your saves first!"
+    },
+    {
       "Key": "LABEL_PLAYFIELDS",
       "Value": "Playfields"
+    },
+    {
+      "Key": "LABEL_DETAILS",
+      "Value": "Details"
+    },
+    {
+      "Key": "LABEL_NEW_SAVE",
+      "Value": "New Save"
+    },
+    {
+      "Key": "LABEL_EXISTING_SAVE",
+      "Value": "Existing Save"
     },
     {
       "Key": "TOOLTIP_NEW_SECTOR",

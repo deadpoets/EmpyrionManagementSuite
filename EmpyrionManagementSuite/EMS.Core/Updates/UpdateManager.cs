@@ -101,21 +101,21 @@ namespace EMS.Core.Updates
                 var installationFilePath = Constants.BASE_DIRECTORY + (F.RelativeInstallPath == "#" ? "" : F.RelativeInstallPath.Replace("#", "\\")) + F.FileName;
                 var updateFilePath = Constants.TEMP_DIR + "\\" + F.FileName;
 
-                // CHeck for existance of .bak file
+                // Check for existence of .bak file
                 if (File.Exists(installationFilePath + ".bak"))
                 {
                     // Delete the older backup
                     File.Delete(installationFilePath + ".bak");
                 }
 
-                // CHeck for existence of old file, and rename it if it exists...
+                // Check for existence of old file, and rename it if it exists...
                 if (File.Exists(installationFilePath))
                 {
                     // Rename the old file.
                     File.Move(installationFilePath, installationFilePath + ".bak");
                 }
 
-                // Move the new file into root directory
+                // Move the new file into correct directory
                 File.Move(updateFilePath, installationFilePath);
             }
             catch (Exception ex)
