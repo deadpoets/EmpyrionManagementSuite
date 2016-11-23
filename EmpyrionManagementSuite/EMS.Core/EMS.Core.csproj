@@ -93,6 +93,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Libraries\ILibrary.cs" />
     <Compile Include="Libraries\LibrariesManager.cs" />
     <Compile Include="Libraries\SectorsManager.cs" />
     <Compile Include="Navigation\FrameNavigationService.cs" />

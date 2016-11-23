@@ -283,7 +283,16 @@ namespace EMS.Core.ViewModels
                 sector.FriendlyName = "M0rph3u$_0";
                 sector.Owner = "MZ";
 
-                sManager.SaveSector(sector);
+                var result = sManager.SaveSector(sector);
+
+                if (result)
+                {
+                    UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_SUCCESS"));
+                }
+                else
+                {
+                    UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_FAILED"));
+                }
 
                 RebindSectors();
             }
