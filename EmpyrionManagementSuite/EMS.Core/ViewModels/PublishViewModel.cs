@@ -13,7 +13,7 @@ namespace EMS.Core.ViewModels
         {
             navService = NAVSERVICE;
 
-            detailsSinglePlayerVisibility = Visibility.Visible;
+            DetailsSinglePlayerVisibility = Visibility.Visible;
         }
 
         public Visibility DetailsSinglePlayerVisibility

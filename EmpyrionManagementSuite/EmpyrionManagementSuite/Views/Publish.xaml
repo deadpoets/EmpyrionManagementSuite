@@ -53,7 +53,7 @@
                     <!--// 1. DETAILS //-->
                     <TabItem Header="{Binding DetailsLabel}" TabIndex="1">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
-                            <Border Visibility="{Binding DetailsSinglePlayerVisiblity}" BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
+                            <Border Visibility="{Binding DetailsSinglePlayerVisibility}" BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
                                 <StackPanel Margin="0,0,0,5">
                                 </StackPanel>
                             </Border>
