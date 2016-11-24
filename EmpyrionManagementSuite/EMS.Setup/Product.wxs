@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
   <?define EmpyrionManagementSuite_TargetDir=$(var.EmpyrionManagementSuite.TargetDir)?>
-  <Product Id="*" Name="EMS" Language="1033" Version="1.0.1" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="c36d4d1b-60d2-4480-8c3b-a0d5a1b3483b">
+  <Product Id="*" Name="EmpyrionManagementSuite" Language="1033" Version="1.0.1" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="c36d4d1b-60d2-4480-8c3b-a0d5a1b3483b">
     <Package InstallerVersion="400" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
@@ -20,10 +20,16 @@
 
     <Feature Id="EMS" Title="!(loc.ProductName)" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="ProductComponentsLocalizations" />
       <ComponentGroupRef Id="ProductMenuComponents" />
       <ComponentRef Id="ApplicationShortcutDesktop" />
       <ComponentRef Id="Permission.InstallFolder" />
     </Feature>
+
+    <WixVariable Id="WixUIBannerBmp" Value="$(sys.CURRENTDIR)Resources\ems_Banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(sys.CURRENTDIR)Resources\ems_493x312.bmp" />
+    <WixVariable Id="WixUIExclamationIco" Value="$(sys.CURRENTDIR)Resources\ems_128x128.ico" />
+    <WixVariable Id="WixUIInfoIco" Value="$(sys.CURRENTDIR)Resources\ems_128x128.ico" />
   </Product>
 
   <Fragment>
@@ -42,7 +48,7 @@
 
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="EmpyrionManagementSuite">
-          <Directory Id="localizations" Name="Localizations" />
+          <Directory Id="LOCALIZATIONS" Name="Localizations" />
           <Component Id="Permission.InstallFolder" Guid="{7C5234ED-EE92-468A-A765-27E5747705DB}">
             <CreateFolder>
               <Permission User="Everyone" GenericAll="yes" />
@@ -99,9 +105,13 @@
       <Component Id="EmpyrionManagementSuite.exe.config" Guid="83b7683f-17e5-4c98-ba01-43bfb35f43fb">
         <File Id="EmpyrionManagementSuite.exe.config" Name="EmpyrionManagementSuite.exe.config" Source="$(var.EmpyrionManagementSuite_TargetDir)EmpyrionManagementSuite.exe.config" />
       </Component>
+      <Component Id="LICENSE" Guid="84b9d81a-c442-40ac-b151-f593f96d4fb9">
+        <File Id="LICENSE" Name="LICENSE" Source="$(var.EmpyrionManagementSuite_TargetDir)LICENSE" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ProductComponentsLocalizations" Directory="LOCALIZATIONS">
       <Component Id="Localizations_en_us.json" Guid="46019f5c-5a68-4e6e-93ab-b0d9347d25fa">
         <File Id="Localizations_en_us.json" Name="en-us.json" Source="$(var.EmpyrionManagementSuite_TargetDir)Localizations\en-us.json" />
-        <!--<RegistryValue Root="HKCU" Key="Software\EmpyrionManagementSuite\EMS\en-us" Name="installed" Type="integer" Value="1" KeyPath="yes" />-->
       </Component>
     </ComponentGroup>
   </Fragment>

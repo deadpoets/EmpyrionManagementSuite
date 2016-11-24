@@ -26,6 +26,8 @@
   <ItemGroup>
     <Content Include="EMS.Setup.wax" />
     <Content Include="Resources\ems_128x128.ico" />
+    <Content Include="Resources\ems_493x312.bmp" />
+    <Content Include="Resources\ems_Banner.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmpyrionManagementSuite\EmpyrionManagementSuite.csproj">
