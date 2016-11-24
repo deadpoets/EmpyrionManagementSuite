@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+  <?define EmpyrionManagementSuite_TargetDir=$(var.EmpyrionManagementSuite.TargetDir)?>
+  <Product Id="*" Name="EMS" Language="1033" Version="1.0.1" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="c36d4d1b-60d2-4480-8c3b-a0d5a1b3483b">
+    <Package InstallerVersion="400" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+    <UI>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+    </UI>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Set the icon to show next to the program name in Add/Remove programs -->
+    <Icon Id="EMSIcon.ico" SourceFile="$(sys.CURRENTDIR)Resources\ems_128x128.ico" />
+    <Property Id="ARPPRODUCTICON" Value="EMSIcon.ico" />
+
+    <Feature Id="EMS" Title="!(loc.ProductName)" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="ProductMenuComponents" />
+      <ComponentRef Id="ApplicationShortcutDesktop" />
+      <ComponentRef Id="Permission.InstallFolder" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="!(loc.ProductName)" />
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="Desktop">
+        <Component Id="ApplicationShortcutDesktop" Guid="*">
+          <Shortcut Id="ApplicationDesktopShortcut" Name="!(loc.ProductName)" Description="Empyrion Management Suite - an app by MorpheusZero." Target="[INSTALLFOLDER]EmpyrionManagementSuite.exe" WorkingDirectory="EMSFolder" />
+          <RemoveFolder Id="DesktopFolder" On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\EmpyrionManagementSuite\EMS" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+      </Directory>
+
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="EmpyrionManagementSuite">
+          <Directory Id="localizations" Name="Localizations" />
+          <Component Id="Permission.InstallFolder" Guid="{7C5234ED-EE92-468A-A765-27E5747705DB}">
+            <CreateFolder>
+              <Permission User="Everyone" GenericAll="yes" />
+            </CreateFolder>
+            <RemoveFile Id="PurgeAppFolder" Name="*.*" On="uninstall" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductMenuComponents" Directory="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="{D4005ABE-1164-451A-843B-572769A79BEB}">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="!(loc.ProductName)" Description="Empyrion Management Suite - an app by MorpheusZero." Target="[INSTALLFOLDER]EmpyrionManagementSuite.exe" WorkingDirectory="EMSFolder" />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\EmpyrionManagementSuite\EMS" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="EmpyrionManagementSuite.exe" Guid="43ce5e67-3a74-4920-84b6-9d06ae312bdf">
+        <File Id="EmpyrionManagementSuite.exe" Name="EmpyrionManagementSuite.exe" Source="$(var.EmpyrionManagementSuite_TargetDir)EmpyrionManagementSuite.exe" />
+      </Component>
+      <Component Id="EMS.Core.dll" Guid="7d2e1583-d349-46ef-b7f9-dbb98d72c82f">
+        <File Id="EMS.Core.dll" Name="EMS.Core.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)EMS.Core.dll" />
+      </Component>
+      <Component Id="EMS.DataModels.dll" Guid="434a1308-8ad0-4e4d-be82-785c68782df4">
+        <File Id="EMS.DataModels.dll" Name="EMS.DataModels.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)EMS.DataModels.dll" />
+      </Component>
+      <Component Id="Microsoft.Practices.ServiceLocation.dll" Guid="1774b7e0-f750-4bcc-afc4-ac47b8da7ca3">
+        <File Id="Microsoft.Practices.ServiceLocation.dll" Name="Microsoft.Practices.ServiceLocation.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)Microsoft.Practices.ServiceLocation.dll" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.dll" Guid="3786be8c-7afd-437a-8bd9-c12e000a477b">
+        <File Id="GalaSoft.MvvmLight.dll" Name="GalaSoft.MvvmLight.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)GalaSoft.MvvmLight.dll" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.Extras.dll" Guid="8fa3c2c8-8591-4f0d-9fa5-1c1a848c1b02">
+        <File Id="GalaSoft.MvvmLight.Extras.dll" Name="GalaSoft.MvvmLight.Extras.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)GalaSoft.MvvmLight.Extras.dll" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.Platform.dll" Guid="5d8cfb11-08f6-4c38-819d-dff59599d0e2">
+        <File Id="GalaSoft.MvvmLight.Platform.dll" Name="GalaSoft.MvvmLight.Platform.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)GalaSoft.MvvmLight.Platform.dll" />
+      </Component>
+      <Component Id="System.Windows.Interactivity.dll" Guid="3ef62441-2ba9-49c1-982c-1c26bec76672">
+        <File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)System.Windows.Interactivity.dll" />
+      </Component>
+      <Component Id="Newtonsoft.Json.dll" Guid="df30af42-99e3-481b-8bbd-1bac5ca3f275">
+        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="YamlDotNet.dll" Guid="fb72739f-cd02-43ff-b8ad-508985b4872b">
+        <File Id="YamlDotNet.dll" Name="YamlDotNet.dll" Source="$(var.EmpyrionManagementSuite_TargetDir)YamlDotNet.dll" />
+      </Component>
+      <Component Id="EmpyrionManagementSuite.exe.config" Guid="83b7683f-17e5-4c98-ba01-43bfb35f43fb">
+        <File Id="EmpyrionManagementSuite.exe.config" Name="EmpyrionManagementSuite.exe.config" Source="$(var.EmpyrionManagementSuite_TargetDir)EmpyrionManagementSuite.exe.config" />
+      </Component>
+      <Component Id="Localizations_en_us.json" Guid="46019f5c-5a68-4e6e-93ab-b0d9347d25fa">
+        <File Id="Localizations_en_us.json" Name="en-us.json" Source="$(var.EmpyrionManagementSuite_TargetDir)Localizations\en-us.json" />
+        <!--<RegistryValue Root="HKCU" Key="Software\EmpyrionManagementSuite\EMS\en-us" Name="installed" Type="integer" Value="1" KeyPath="yes" />-->
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
