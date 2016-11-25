@@ -10,7 +10,7 @@ namespace EMS.Core.ViewModels
     {
         private IFrameNavigationService navService;
         private Visibility detailsSinglePlayerVisibility;
-        private Visibility detailsNewSaveVisibility;
+        private Visibility detailsExistingSaveVisibility;
         public RelayCommand<object> LocationHandler { get; set; }
         public RelayCommand<object> EnvironmentHandler { get; set; }
 
@@ -19,7 +19,7 @@ namespace EMS.Core.ViewModels
             navService = NAVSERVICE;
 
             DetailsSinglePlayerVisibility = Visibility.Visible;
-            DetailsNewSaveVisibility = Visibility.Visible;
+            DetailsExistingSaveVisibility = Visibility.Visible;
 
             SetupCommands();
         }
@@ -37,16 +37,16 @@ namespace EMS.Core.ViewModels
             }
         }
 
-        public Visibility DetailsNewSaveVisibility
+        public Visibility DetailsExistingSaveVisibility
         {
             get
             {
-                return detailsNewSaveVisibility;
+                return detailsExistingSaveVisibility;
             }
             set
             {
-                detailsNewSaveVisibility = value;
-                RaisePropertyChanged("DetailsNewSaveVisibility");
+                detailsExistingSaveVisibility = value;
+                RaisePropertyChanged("DetailsExistingSaveVisibility");
             }
         }
 
@@ -163,12 +163,12 @@ namespace EMS.Core.ViewModels
                 {
                     // New Save
                     case 0:
-                        DetailsNewSaveVisibility = Visibility.Visible;
+                        DetailsExistingSaveVisibility = Visibility.Collapsed;
                         break;
 
                     // Existing Save
                     case 1:
-                        DetailsNewSaveVisibility = Visibility.Collapsed;
+                        DetailsExistingSaveVisibility = Visibility.Visible;
                         break;
                 }
             }
