@@ -1,5 +1,7 @@
 ﻿using EMS.Core.Navigation;
 using EMS.Core.Util;
+using GalaSoft.MvvmLight.Command;
+using System;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -8,12 +10,18 @@ namespace EMS.Core.ViewModels
     {
         private IFrameNavigationService navService;
         private Visibility detailsSinglePlayerVisibility;
+        private Visibility detailsNewSaveVisibility;
+        public RelayCommand<object> LocationHandler { get; set; }
+        public RelayCommand<object> EnvironmentHandler { get; set; }
 
         public PublishViewModel(IFrameNavigationService NAVSERVICE)
         {
             navService = NAVSERVICE;
 
             DetailsSinglePlayerVisibility = Visibility.Visible;
+            DetailsNewSaveVisibility = Visibility.Visible;
+
+            SetupCommands();
         }
 
         public Visibility DetailsSinglePlayerVisibility
@@ -26,6 +34,19 @@ namespace EMS.Core.ViewModels
             {
                 detailsSinglePlayerVisibility = value;
                 RaisePropertyChanged("DetailsSinglePlayerVisibility");
+            }
+        }
+
+        public Visibility DetailsNewSaveVisibility
+        {
+            get
+            {
+                return detailsNewSaveVisibility;
+            }
+            set
+            {
+                detailsNewSaveVisibility = value;
+                RaisePropertyChanged("DetailsNewSaveVisibility");
             }
         }
 
@@ -90,6 +111,70 @@ namespace EMS.Core.ViewModels
             get
             {
                 return ResourceManager.GetResource("LABEL_MULTI_PLAYER");
+            }
+        }
+
+        private void SetupCommands()
+        {
+            try
+            {
+                EnvironmentHandler = new RelayCommand<object>(HandleEnvironmentInput);
+                LocationHandler = new RelayCommand<object>(HandleLocationInput);
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void HandleEnvironmentInput(object TYPE)
+        {
+            try
+            {
+                var index = int.Parse(TYPE.ToString());
+
+                switch (index)
+                {
+                    // Single Player
+                    case -1:
+                        DetailsSinglePlayerVisibility = Visibility.Visible;
+                        break;
+
+                    // Multiplayer
+                    case 0:
+                        //TODO: unimplemented
+                        DetailsSinglePlayerVisibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void HandleLocationInput(object TYPE)
+        {
+            try
+            {
+                var index = int.Parse(TYPE.ToString());
+
+                switch (index)
+                {
+                    // New Save
+                    case 0:
+                        DetailsNewSaveVisibility = Visibility.Visible;
+                        break;
+
+                    // Existing Save
+                    case 1:
+                        DetailsNewSaveVisibility = Visibility.Collapsed;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
             }
         }
     }
