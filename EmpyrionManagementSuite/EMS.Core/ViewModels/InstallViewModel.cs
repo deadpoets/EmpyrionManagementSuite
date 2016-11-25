@@ -85,10 +85,11 @@ namespace EMS.Core.ViewModels
                 }
                 else
                 {
-                    var settings = (((dynamic)Application.Current).Settings as AppSettings);
+                    var settings = (((dynamic) Application.Current).Settings as AppSettings);
                     settings.GameInstallationPath = gamePathSource;
+                    settings.SPSavesDirectory = gamePathSource + "\\Saves";
 
-                    ((dynamic)Application.Current).Settings = SettingsManager.SaveSettings(settings);
+                    ((dynamic) Application.Current).Settings = SettingsManager.SaveSettings(settings);
 
                     navService.NavigateTo("home");
                 }
