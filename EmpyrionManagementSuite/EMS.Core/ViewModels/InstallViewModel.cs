@@ -1,6 +1,5 @@
 ﻿using EMS.Core.Navigation;
 using EMS.Core.Util;
-using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows;
@@ -85,11 +84,11 @@ namespace EMS.Core.ViewModels
                 }
                 else
                 {
-                    var settings = (((dynamic) Application.Current).Settings as AppSettings);
+                    var settings = SettingsManager.Instance();
                     settings.GameInstallationPath = gamePathSource;
                     settings.SPSavesDirectory = gamePathSource + "\\Saves";
 
-                    ((dynamic) Application.Current).Settings = SettingsManager.SaveSettings(settings);
+                    SettingsManager.SaveSettings(settings);
 
                     navService.NavigateTo("home");
                 }

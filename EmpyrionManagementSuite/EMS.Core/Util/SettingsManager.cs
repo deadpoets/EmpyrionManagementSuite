@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Windows;
 
 namespace EMS.Core.Util
 {
@@ -10,6 +11,40 @@ namespace EMS.Core.Util
     /// </summary>
     public class SettingsManager
     {
+        /// <summary>
+        /// returns the active instance of the AppSettings.
+        /// </summary>
+        /// <returns></returns>
+        public static AppSettings Instance()
+        {
+            try
+            {
+                return (((dynamic) Application.Current).Settings as AppSettings);
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// sets the active instance of the AppSettings.
+        /// </summary>
+        /// <returns></returns>
+        public static void Instance(AppSettings SETTINGS)
+        {
+            try
+            {
+                ((dynamic) Application.Current).Settings = SETTINGS;
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
         /// <summary>
         /// Reads the current AppSettings file from disk.
         /// </summary>
@@ -54,6 +89,8 @@ namespace EMS.Core.Util
                 File.WriteAllText(Constants.APPSETTINGS_FILE, JsonConvert.SerializeObject(SETTINGS, Formatting.Indented));
 
                 settings = SETTINGS;
+
+                Instance(settings);
             }
             catch (Exception ex)
             {
