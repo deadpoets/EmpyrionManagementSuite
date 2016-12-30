@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization" Codepage="1252">
-  <String Id="LANG">1033</String>
-  <String Id="ProductName">Empyrion Management Suite</String>
-  <String Id="ManufacturerName">MorpheusZero</String>
-  <String Id="DotNetFrameworkNeeded">.NET Framework 4.6 is required. Please install the .NET Framework then run this installer again.</String>
-  <String Id="Vessel365NewerVersionInstalled">A newer version of !(loc.ProductName) is already installed.</String>
-  <String Id="WelcomeDlgDescription">Welcome to the installation of Empyrion Management Suite. Click Next to continue or Cancel to exit.</String>
-</WixLocalization>

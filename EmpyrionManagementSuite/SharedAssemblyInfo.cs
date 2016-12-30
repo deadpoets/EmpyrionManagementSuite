@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("MorpheusZero")]
 [assembly: AssemblyProduct("Empyrion Management Suite")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
+[assembly: AssemblyCopyright("Copyright © 2017")]
 [assembly: AssemblyTrademark("EMS")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
