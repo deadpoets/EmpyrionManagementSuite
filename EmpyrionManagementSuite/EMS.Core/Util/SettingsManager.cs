@@ -62,6 +62,7 @@ namespace EMS.Core.Util
                     settings.LocalizationCode = "en-us";
                     settings.CheckForUpdates = true;
                     settings.UpdateChannel = "master";
+                    settings.SteamCMDInstallURL = "https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip";
 
                     File.WriteAllText(Constants.APPSETTINGS_FILE, JsonConvert.SerializeObject(settings, Formatting.Indented));
                 }
