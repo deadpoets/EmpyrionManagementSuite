@@ -69,6 +69,7 @@
     <Compile Include="Models\FixedResource.cs" />
     <Compile Include="Models\LocalEffect.cs" />
     <Compile Include="Models\LocalizationBase.cs" />
+    <Compile Include="Models\NameValuePair.cs" />
     <Compile Include="Models\PlanetaryBiome.cs" />
     <Compile Include="Models\Playfield.cs" />
     <Compile Include="Models\RandomResource.cs" />

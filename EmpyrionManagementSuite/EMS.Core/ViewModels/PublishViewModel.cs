@@ -1,7 +1,10 @@
 ﻿using EMS.Core.Navigation;
 using EMS.Core.Util;
+using EMS.DataModels.Models;
 using GalaSoft.MvvmLight.Command;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 
 namespace EMS.Core.ViewModels
@@ -11,6 +14,7 @@ namespace EMS.Core.ViewModels
         private IFrameNavigationService navService;
         private Visibility detailsSinglePlayerVisibility;
         private Visibility detailsExistingSaveVisibility;
+        private List<NameValuePair> saveGameFolders;
         public RelayCommand<object> LocationHandler { get; set; }
         public RelayCommand<object> EnvironmentHandler { get; set; }
 
@@ -22,6 +26,8 @@ namespace EMS.Core.ViewModels
             DetailsExistingSaveVisibility = Visibility.Visible;
 
             SetupCommands();
+
+            GetSavedGameFolders();
         }
 
         public Visibility DetailsSinglePlayerVisibility
@@ -47,6 +53,19 @@ namespace EMS.Core.ViewModels
             {
                 detailsExistingSaveVisibility = value;
                 RaisePropertyChanged("DetailsExistingSaveVisibility");
+            }
+        }
+
+        public List<NameValuePair> SaveGameFolders
+        {
+            get
+            {
+                return saveGameFolders;
+            }
+            set
+            {
+                saveGameFolders = value;
+                RaisePropertyChanged("SaveGameFolders");
             }
         }
 
@@ -148,6 +167,31 @@ namespace EMS.Core.ViewModels
                 }
             }
             catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        private void GetSavedGameFolders()
+        {
+            try
+            {
+                var lst = Directory.EnumerateDirectories(SettingsManager.Instance().GameInstallationPath + "\\Saves\\Games");
+                var tmp = new List<NameValuePair>();
+
+                foreach(var folder in lst)
+                {
+                    var nvp = new NameValuePair();
+
+                    nvp.Name = folder.Substring(folder.LastIndexOf("\\") + 1);
+                    nvp.Value = folder;
+
+                    tmp.Add(nvp);
+                }
+
+                SaveGameFolders = new List<NameValuePair>(tmp);
+            }
+            catch(Exception ex)
             {
                 AppLogger.Exception(ex);
             }
