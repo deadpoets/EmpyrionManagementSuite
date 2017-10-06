@@ -15,7 +15,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Margin="10,-26,-10,26">
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0">
 
                 <!--// Game Installation Path //-->
@@ -24,16 +24,10 @@
                     <TextBox IsEnabled="False" Text="{Binding InstallationPath}" Width="250" />
                 </StackPanel>
 
-                <!--// Update Checker //-->
-                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                    <TextBlock Text="{Binding UpdateLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
-                    <CheckBox IsEnabled="false" IsChecked="{Binding ShouldCheckForUpdates}" />
-                </StackPanel>
-
                 <!--// Language //-->
                 <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                     <TextBlock Text="{Binding LanguageLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
-                    <ComboBox IsEnabled="False" Width="250" />
+                    <ComboBox IsEnabled="False" Width="290" />
                 </StackPanel>
 
                 <!--// Steam Username //-->
@@ -46,12 +40,6 @@
                 <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                     <TextBlock Text="{Binding PasswordLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
                     <TextBox IsEnabled="False" Text="NOT IMPLEMENTED" Width="250" />
-                </StackPanel>
-
-                <!--// Update Channel //-->
-                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                    <TextBlock Text="{Binding UpdateChannelLabel}" Style="{StaticResource ControlLabel}" Margin="10,0,10,0" />
-                    <TextBox IsEnabled="False" Text="master" Width="250" />
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -25,8 +25,6 @@ namespace EMS.Core.Util
                 {
                     settings.Version = VersionInfo.FileVersion;
                     settings.LocalizationCode = "en-us";
-                    settings.CheckForUpdates = true;
-                    settings.UpdateChannel = "master";
 
                     File.WriteAllText(Constants.APPSETTINGS_FILE, JsonConvert.SerializeObject(settings, Formatting.Indented));
                 }

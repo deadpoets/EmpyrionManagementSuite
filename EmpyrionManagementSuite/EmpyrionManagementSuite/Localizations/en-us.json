@@ -96,10 +96,6 @@
       "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
     },
     {
-      "Key": "LABEL_UPDATE_CHECK",
-      "Value": "Check For Updates?"
-    },
-    {
       "Key": "LABEL_USERNAME",
       "Value": "Steam Username"
     },
@@ -110,10 +106,6 @@
     {
       "Key": "LABEL_LANGUAGE",
       "Value": "Language"
-    },
-    {
-      "Key": "LABEL_UPDATE_CHANNEL",
-      "Value": "Update Channel"
     },
     {
       "Key": "LABEL_SECTORS",

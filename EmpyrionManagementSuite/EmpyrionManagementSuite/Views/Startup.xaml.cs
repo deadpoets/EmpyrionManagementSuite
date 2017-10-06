@@ -26,12 +26,6 @@ namespace EmpyrionManagementSuite.Views
                 try
                 {
                     ViewModel.Start();
-
-                    // check for updates
-                    if (((dynamic)Application.Current).Settings.CheckForUpdates)
-                    {
-                        ViewModel.CheckForUpdates();
-                    }
                 }
                 catch (Exception ex)
                 {

@@ -17,7 +17,6 @@ namespace EMS.Core.Util
         public static string LOCALIZATION_DIRECTORY = BASE_DIRECTORY + "Localizations";
         public static string TEMP_DIR = BASE_DIRECTORY + "tmp";
         public static string BAK_DIR = BASE_DIRECTORY + "bak";
-        public static string UPDATE_JSON_URL = "https://raw.githubusercontent.com/MorpheusZero/EmpyrionManagementSuite/master/update.json";
-        public static string HOME_DASHBOARD_URL = "http://empyrionmanagementsuite.tumblr.com/";
+        public static string HOME_DASHBOARD_URL = "http://https://github.com/deadpoets/EmpyrionManagementSuite";
     }
 }

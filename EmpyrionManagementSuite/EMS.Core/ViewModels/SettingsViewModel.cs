@@ -7,22 +7,11 @@ namespace EMS.Core.ViewModels
     public class SettingsViewModel : ViewModelCommon
     {
         private IFrameNavigationService navService;
-
-        private bool shouldCheckForUpdates;
-
         public string InstallationPathLabel
         {
             get
             {
                 return ResourceManager.GetResource("LABEL_GAME_INSTALLATION_PATH");
-            }
-        }
-
-        public string UpdateLabel
-        {
-            get
-            {
-                return ResourceManager.GetResource("LABEL_UPDATE_CHECK");
             }
         }
 
@@ -50,14 +39,6 @@ namespace EMS.Core.ViewModels
             }
         }
 
-        public string UpdateChannelLabel
-        {
-            get
-            {
-                return ResourceManager.GetResource("LABEL_UPDATE_CHANNEL");
-            }
-        }
-
         public string InstallationPath
         {
             get
@@ -70,25 +51,6 @@ namespace EMS.Core.ViewModels
                 InstallationPath = value;
             }
         }
-
-        public bool ShouldCheckForUpdates
-        {
-            get
-            {
-                return shouldCheckForUpdates;
-            }
-
-            set
-            {
-                shouldCheckForUpdates = value;
-            }
-        }
-
-        public SettingsViewModel(IFrameNavigationService NAVSERVICE)
-        {
-            navService = NAVSERVICE;
-            Name = ResourceManager.GetResource("APP_NAME");
-            shouldCheckForUpdates = ((dynamic)Application.Current).Settings.CheckForUpdates;
-        }
+        
     }
 }
