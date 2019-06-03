@@ -1,227 +1,227 @@
 ﻿{
-  "LocalizationCode": "en-us",
-  "Name": "American English",
-  "Authors": [ "MorpheusZero" ],
-  "Resources": [
-    {
-      "Key": "APP_NAME",
-      "Value": "Empyrion Management Suite"
-    },
-    {
-      "Key": "APP_LEAD_DEVELOPER",
-      "Value": "Dylan Legendre"
-    },
-    {
-      "Key": "APP_CLOSE",
-      "Value": "Close"
-    },
-    {
-      "Key": "APP_CONFIRM_SHUTDOWN",
-      "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
-    },
-    {
-      "Key": "APP_QUIT",
-      "Value": "Quit?"
-    },
-    {
-      "Key": "APP_MINIMIZE",
-      "Value": "Minimize"
-    },
-    {
-      "Key": "APP_YES",
-      "Value": "Yes"
-    },
-    {
-      "Key": "APP_NO",
-      "Value": "No"
-    },
-    {
-      "Key": "APP_OK",
-      "Value": "OK"
-    },
-    {
-      "Key": "APP_SUBMIT",
-      "Value": "Submit"
-    },
-    {
-      "Key": "ALERT_NO_SECTORS_EXIST",
-      "Value": "No sectors exist in the system. You can create one by pressing the button above!"
-    },
-    {
-      "Key": "STARTUP_LOADING",
-      "Value": "Please wait while EMS loads..."
-    },
-    {
-      "Key": "CONTROL_BUTTON_SETTINGS",
-      "Value": "Settings"
-    },
-    {
-      "Key": "CONTROL_BUTTON_HOME",
-      "Value": "Home"
-    },
-    {
-      "Key": "CONTROL_BUTTON_CREDITS",
-      "Value": "Credits"
-    },
-    {
-      "Key": "CONTROL_BUTTON_SECTORS",
-      "Value": "Sectors"
-    },
-    {
-      "Key": "CONTROL_BUTTON_SAVE",
-      "Value": "Save"
-    },
-    {
-      "Key": "CONTROL_BUTTON_PUBLISH",
-      "Value": "Publish"
-    },
-    {
-      "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
-      "Value": "Confirm Setup"
-    },
-    {
-      "Key": "LABEL_GAME_INSTALLATION_PATH",
-      "Value": "Empyrion Installation Path"
-    },
-    {
-      "Key": "SETUP_REQUIRES_INSTALL_PATH",
-      "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
-    },
-    {
-      "Key": "LISTBOX_SELECT_REQUIRED",
-      "Value": "You must select an item from the list to proceed!"
-    },
-    {
-      "Key": "WELCOME_MESSAGE",
-      "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
-    },
-    {
-      "Key": "LABEL_UPDATE_CHECK",
-      "Value": "Check For Updates?"
-    },
-    {
-      "Key": "LABEL_USERNAME",
-      "Value": "Steam Username"
-    },
-    {
-      "Key": "LABEL_PASSWORD",
-      "Value": "Steam Password"
-    },
-    {
-      "Key": "LABEL_LANGUAGE",
-      "Value": "Language"
-    },
-    {
-      "Key": "LABEL_UPDATE_CHANNEL",
-      "Value": "Update Channel"
-    },
-    {
-      "Key": "LABEL_SECTORS",
-      "Value": "Sectors"
-    },
-    {
-      "Key": "LABEL_ID",
-      "Value": "ID"
-    },
-    {
-      "Key": "LABEL_FRIENDLY_NAME",
-      "Value": "Friendly Name"
-    },
-    {
-      "Key": "LABEL_OWNER",
-      "Value": "Owner"
-    },
-    {
-      "Key": "LABEL_CREATE_DATE",
-      "Value": "Create Date"
-    },
-    {
-      "Key": "LABEL_LAST_EDIT_DATE",
-      "Value": "Last Edit Date"
-    },
-    {
-      "Key": "LABEL_CONTRIBUTORS",
-      "Value": "Contributors"
-    },
-    {
-      "Key": "LABEL_COORDINATES",
-      "Value": "Coordinates"
-    },
-    {
-      "Key": "LABEL_URL",
-      "Value": "URL"
-    },
-    {
-      "Key": "LABEL_COLOR",
-      "Value": "Color"
-    },
-    {
-      "Key": "LABEL_ICON",
-      "Value": "Icon"
-    },
-    {
-      "Key": "LABEL_SINGLE_PLAYER",
-      "Value": "Single Player"
-    },
-    {
-      "Key": "LABEL_MULTI_PLAYER",
-      "Value": "Multiplayer"
-    },
-    {
-      "Key": "LABEL_ENVIRONMENT",
-      "Value": "Environment"
-    },
-    {
-      "Key": "LABEL_ENVIRONMENT_HELP_TEXT",
-      "Value": "Please choose an environment that you would like to publish the configuration to. Please note that the current implementation only supports a single player installation. Multiplayer and dedicated server support is coming soon!"
-    },
-    {
-      "Key": "LABEL_LOCATION_HELP_TEXT",
-      "Value": "Choose where the publish will take place. Should we create a new save folder? Or will we be modifying an existing installation? Please note that modifying an existing save can cause data to be overwritten. You should always ensure you have a backup of your saves first!"
-    },
-    {
-      "Key": "LABEL_PLAYFIELDS",
-      "Value": "Playfields"
-    },
-    {
-      "Key": "LABEL_DETAILS",
-      "Value": "Details"
-    },
-    {
-      "Key": "LABEL_NEW_SAVE",
-      "Value": "New Save"
-    },
-    {
-      "Key": "LABEL_EXISTING_SAVE",
-      "Value": "Existing Save"
-    },
-    {
-      "Key": "TOOLTIP_NEW_SECTOR",
-      "Value": "Add New Sector"
-    },
-    {
-      "Key": "TOOLTIP_DELETE_SECTOR",
-      "Value": "Delete Sector"
-    },
-    {
-      "Key": "TOOLTIP_COPY_SECTOR",
-      "Value": "Copy Sector"
-    },
-    {
-      "Key": "SECTOR_SAVED_SUCCESS",
-      "Value": "Sector was saved successfully!"
-    },
-    {
-      "Key": "SECTOR_SAVED_FAIL",
-      "Value": "An error occured when attempting to save the sector! "
-    },
-    {
-      "Key": "SECTOR_DELETED_SUCCESS",
-      "Value": "Sector was deleted successfully!"
-    },
-    {
-      "Key": "SECTOR_DELETED_FAIL",
-      "Value": "An error occured when attempting to delete the sector! "
-    }
-  ]
+    "LocalizationCode": "en-us",
+    "Name": "American English",
+    "Authors": [ "MorpheusZero" ],
+    "Resources": [
+        {
+            "Key": "APP_NAME",
+            "Value": "Empyrion Management Suite"
+        },
+        {
+            "Key": "APP_LEAD_DEVELOPER",
+            "Value": "Dylan Legendre"
+        },
+        {
+            "Key": "APP_CLOSE",
+            "Value": "Close"
+        },
+        {
+            "Key": "APP_CONFIRM_SHUTDOWN",
+            "Value": "This will shutdown the application without saving any changes or gracefully terminating any running servers. Are you sure you want to quit?"
+        },
+        {
+            "Key": "APP_QUIT",
+            "Value": "Quit?"
+        },
+        {
+            "Key": "APP_MINIMIZE",
+            "Value": "Minimize"
+        },
+        {
+            "Key": "APP_YES",
+            "Value": "Yes"
+        },
+        {
+            "Key": "APP_NO",
+            "Value": "No"
+        },
+        {
+            "Key": "APP_OK",
+            "Value": "OK"
+        },
+        {
+            "Key": "APP_SUBMIT",
+            "Value": "Submit"
+        },
+        {
+            "Key": "ALERT_NO_SECTORS_EXIST",
+            "Value": "No sectors exist in the system. You can create one by pressing the button above!"
+        },
+        {
+            "Key": "STARTUP_LOADING",
+            "Value": "Please wait while EMS loads..."
+        },
+        {
+            "Key": "CONTROL_BUTTON_SETTINGS",
+            "Value": "Settings"
+        },
+        {
+            "Key": "CONTROL_BUTTON_HOME",
+            "Value": "Home"
+        },
+        {
+            "Key": "CONTROL_BUTTON_CREDITS",
+            "Value": "Credits"
+        },
+        {
+            "Key": "CONTROL_BUTTON_SECTORS",
+            "Value": "Sectors"
+        },
+        {
+            "Key": "CONTROL_BUTTON_SAVE",
+            "Value": "Save"
+        },
+        {
+            "Key": "CONTROL_BUTTON_PUBLISH",
+            "Value": "Publish"
+        },
+        {
+            "Key": "CONTROL_BUTTON_CONFIRM_SETUP",
+            "Value": "Confirm Setup"
+        },
+        {
+            "Key": "LABEL_GAME_INSTALLATION_PATH",
+            "Value": "Empyrion Installation Path"
+        },
+        {
+            "Key": "SETUP_REQUIRES_INSTALL_PATH",
+            "Value": "To properly setup EMS, the application requires an install path that includes the .exe to Empyrion game."
+        },
+        {
+            "Key": "LISTBOX_SELECT_REQUIRED",
+            "Value": "You must select an item from the list to proceed!"
+        },
+        {
+            "Key": "WELCOME_MESSAGE",
+            "Value": "Hello and welcome to Empyrion Management Suite! This screen will guide you in configuring your installation so you can begin using this tool to its full potential. Please note that the Steam Username/Password is optional for dedicated servers and we do not share this info or even have access to it. The credentials are only stored within a file on your computer and are not sent to us in any way."
+        },
+        {
+            "Key": "LABEL_UPDATE_CHECK",
+            "Value": "Check For Updates?"
+        },
+        {
+            "Key": "LABEL_USERNAME",
+            "Value": "Steam Username"
+        },
+        {
+            "Key": "LABEL_PASSWORD",
+            "Value": "Steam Password"
+        },
+        {
+            "Key": "LABEL_LANGUAGE",
+            "Value": "Language"
+        },
+        {
+            "Key": "LABEL_UPDATE_CHANNEL",
+            "Value": "Update Channel"
+        },
+        {
+            "Key": "LABEL_SECTORS",
+            "Value": "Sectors"
+        },
+        {
+            "Key": "LABEL_ID",
+            "Value": "ID"
+        },
+        {
+            "Key": "LABEL_FRIENDLY_NAME",
+            "Value": "Friendly Name"
+        },
+        {
+            "Key": "LABEL_OWNER",
+            "Value": "Owner"
+        },
+        {
+            "Key": "LABEL_CREATE_DATE",
+            "Value": "Create Date"
+        },
+        {
+            "Key": "LABEL_LAST_EDIT_DATE",
+            "Value": "Last Edit Date"
+        },
+        {
+            "Key": "LABEL_CONTRIBUTORS",
+            "Value": "Contributors"
+        },
+        {
+            "Key": "LABEL_COORDINATES",
+            "Value": "Coordinates"
+        },
+        {
+            "Key": "LABEL_URL",
+            "Value": "URL"
+        },
+        {
+            "Key": "LABEL_COLOR",
+            "Value": "Color"
+        },
+        {
+            "Key": "LABEL_ICON",
+            "Value": "Icon"
+        },
+        {
+            "Key": "LABEL_SINGLE_PLAYER",
+            "Value": "Single Player"
+        },
+        {
+            "Key": "LABEL_MULTI_PLAYER",
+            "Value": "Multiplayer"
+        },
+        {
+            "Key": "LABEL_ENVIRONMENT",
+            "Value": "Environment"
+        },
+        {
+            "Key": "LABEL_ENVIRONMENT_HELP_TEXT",
+            "Value": "Please choose an environment that you would like to publish the configuration to. Please note that the current implementation only supports a single player installation. Multiplayer and dedicated server support is coming soon!"
+        },
+        {
+            "Key": "LABEL_LOCATION_HELP_TEXT",
+            "Value": "Choose where the publish will take place. Should we create a new save folder? Or will we be modifying an existing installation? Please note that modifying an existing save can cause data to be overwritten. You should always ensure you have a backup of your saves first!"
+        },
+        {
+            "Key": "LABEL_PLAYFIELDS",
+            "Value": "Playfields"
+        },
+        {
+            "Key": "LABEL_DETAILS",
+            "Value": "Details"
+        },
+        {
+            "Key": "LABEL_NEW_SAVE",
+            "Value": "New Save"
+        },
+        {
+            "Key": "LABEL_EXISTING_SAVE",
+            "Value": "Existing Save"
+        },
+        {
+            "Key": "TOOLTIP_NEW_SECTOR",
+            "Value": "Add New Sector"
+        },
+        {
+            "Key": "TOOLTIP_DELETE_SECTOR",
+            "Value": "Delete Sector"
+        },
+        {
+            "Key": "TOOLTIP_COPY_SECTOR",
+            "Value": "Copy Sector"
+        },
+        {
+            "Key": "SECTOR_SAVED_SUCCESS",
+            "Value": "Sector was saved successfully!"
+        },
+        {
+            "Key": "SECTOR_SAVED_FAIL",
+            "Value": "An error occured when attempting to save the sector! "
+        },
+        {
+            "Key": "SECTOR_DELETED_SUCCESS",
+            "Value": "Sector was deleted successfully!"
+        },
+        {
+            "Key": "SECTOR_DELETED_FAIL",
+            "Value": "An error occured when attempting to delete the sector! "
+        }
+    ]
 }

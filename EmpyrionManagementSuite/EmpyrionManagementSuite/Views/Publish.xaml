@@ -26,10 +26,10 @@
                                 <StackPanel Margin="0,0,0,5">
                                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding EnvironmentHelpText}" Style="{StaticResource ParagraphText}" />
 
-                                    <RadioButton IsChecked="True" CommandParameter="-1" GroupName="Environment">
+                                    <RadioButton IsChecked="True" Command="{Binding EnvironmentHandler}" CommandParameter="-1" GroupName="Environment">
                                         <TextBlock Text="{Binding SinglePlayerLabel}" Style="{StaticResource ParagraphText}" />
                                     </RadioButton>
-                                    <RadioButton IsEnabled="False" CommandParameter="0" GroupName="Environment">
+                                    <RadioButton IsEnabled="False" Command="{Binding EnvironmentHandler}" CommandParameter="0" GroupName="Environment">
                                         <TextBlock Text="{Binding MPLabel}" Style="{StaticResource ParagraphText}" />
                                     </RadioButton>
                                 </StackPanel>
@@ -39,10 +39,10 @@
                                 <StackPanel Margin="0,0,0,5">
                                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding LocationHelpText}" Style="{StaticResource ParagraphText}" />
 
-                                    <RadioButton IsChecked="True" CommandParameter="0" GroupName="Location">
+                                    <RadioButton IsEnabled="False" Command="{Binding LocationHandler}" CommandParameter="0" GroupName="Location">
                                         <TextBlock Text="{Binding NewSaveLabel}" Style="{StaticResource ParagraphText}" />
                                     </RadioButton>
-                                    <RadioButton CommandParameter="1" GroupName="Location">
+                                    <RadioButton IsChecked="True" Command="{Binding LocationHandler}" CommandParameter="1" GroupName="Location">
                                         <TextBlock Text="{Binding ExistingSaveLabel}" Style="{StaticResource ParagraphText}" />
                                     </RadioButton>
                                 </StackPanel>
@@ -53,8 +53,10 @@
                     <!--// 1. DETAILS //-->
                     <TabItem Header="{Binding DetailsLabel}" TabIndex="1">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
-                            <Border Visibility="{Binding DetailsSinglePlayerVisiblity}" BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
-                                <StackPanel Margin="0,0,0,5">
+                            <Border Visibility="{Binding DetailsSinglePlayerVisibility}" BorderThickness="0,0,0,1" Margin="0,0,0,10"  BorderBrush="{StaticResource AppThemeForeground}">
+                                <StackPanel Margin="0,0,0,5" Visibility="{Binding DetailsExistingSaveVisibility}">
+                                    <TextBlock Text="{Binding ExistingSaveLabel}" Style="{StaticResource ParagraphText}" />
+                                    <ListBox ItemsSource="{Binding SaveGameFolders}" DisplayMemberPath="Name" />
                                 </StackPanel>
                             </Border>
                         </StackPanel>

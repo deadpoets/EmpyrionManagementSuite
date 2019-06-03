@@ -11,14 +11,31 @@ namespace EMS.Core.Libraries
     /// <summary>
     /// Handles saving/loading of all user created sectors.
     /// </summary>
-    public class SectorsManager : LibrariesManager
+    public class SectorsManager : ILibrary
     {
         private List<EMSSector> sectors;
 
-        public SectorsManager() : base()
+        public SectorsManager()
         {
             try
             {
+                Start();
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Exception(ex);
+            }
+        }
+
+        public void Start()
+        {
+            try
+            {
+                if (!Directory.Exists(Constants.LIBRARIES_DIRECTORY))
+                {
+                    Directory.CreateDirectory(Constants.LIBRARIES_DIRECTORY);
+                }
+
                 RebindSectors();
             }
             catch (Exception ex)
@@ -53,7 +70,6 @@ namespace EMS.Core.Libraries
                 }
                 else
                 {
-                    //UIUtil.Alert(ResourceManager.GetResource("ALERT_NO_SECTORS_EXIST"));
                     sectors = new List<EMSSector>();
                 }
             }
@@ -67,8 +83,11 @@ namespace EMS.Core.Libraries
         /// Saves/Updates a new sector to the list.
         /// </summary>
         /// <param name="SECTOR"></param>
-        public void SaveSector(EMSSector SECTOR)
+        /// <returns>success result is returned.</returns>
+        public bool SaveSector(EMSSector SECTOR)
         {
+            var success = false;
+
             try
             {
                 // if it already exists, remove it and then re-add the
@@ -82,13 +101,14 @@ namespace EMS.Core.Libraries
 
                 File.WriteAllText(Constants.LIBRARIES_SECTORS_FILE, JsonConvert.SerializeObject((sectors.OrderBy(x => x.CreateDate).ToList()), Formatting.Indented));
 
-                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_SUCCESS"));
+                success = true;
             }
             catch (Exception ex)
             {
                 AppLogger.Exception(ex);
-                UIUtil.Alert(ResourceManager.GetResource("SECTOR_SAVED_FAILED") + ex.Message);
             }
+
+            return success;
         }
 
         /// <summary>

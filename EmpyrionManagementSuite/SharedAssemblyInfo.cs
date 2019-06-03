@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyCompany("Dylan Legendre")]
+[assembly: AssemblyCompany("MorpheusZero")]
 [assembly: AssemblyProduct("Empyrion Management Suite")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
+[assembly: AssemblyCopyright("Copyright © 2017")]
 [assembly: AssemblyTrademark("EMS")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

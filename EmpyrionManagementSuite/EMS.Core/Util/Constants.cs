@@ -14,10 +14,13 @@ namespace EMS.Core.Util
         public static string LIBRARIES_SECTORS_FILE = LIBRARIES_DIRECTORY + "\\sectors.json";
         public static string LOGS_LOG_FILE = LOGS_DIRECTORY + "\\logs.json";
         public static string CREDITS_FILE = BASE_DIRECTORY + "credits.json";
+        public static string SERVER_DIRECTORY = BASE_DIRECTORY + "server";
+        public static string SERVER_SERVERS_FILE = SERVER_DIRECTORY + "\\servers.json";
         public static string LOCALIZATION_DIRECTORY = BASE_DIRECTORY + "Localizations";
         public static string TEMP_DIR = BASE_DIRECTORY + "tmp";
         public static string BAK_DIR = BASE_DIRECTORY + "bak";
         public static string UPDATE_JSON_URL = "https://raw.githubusercontent.com/MorpheusZero/EmpyrionManagementSuite/master/update.json";
         public static string HOME_DASHBOARD_URL = "http://empyrionmanagementsuite.tumblr.com/";
+        public static string SAVE_STRUCTURE_GAMES = "\\Games";
     }
 }

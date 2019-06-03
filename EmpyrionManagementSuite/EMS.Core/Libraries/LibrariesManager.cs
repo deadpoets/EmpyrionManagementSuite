@@ -8,6 +8,7 @@ namespace EMS.Core.Libraries
     /// A base class for all libraries that will make sure the
     /// directory is created if it doesn't exist.
     /// </summary>
+    [Obsolete("Please implement ILibrary instead.", true)]
     public class LibrariesManager
     {
         public LibrariesManager()
